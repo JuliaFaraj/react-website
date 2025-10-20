@@ -1,0 +1,55 @@
+/* Box-sizing reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.top-bar {
+  background-color: #12372A;      /* mörkgrön nyans */
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 1px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+
+  
+}
+
+.StorAid-logo {
+    height: 59px;
+    width: 181px;
+  }
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: #0a3d2e;
+}
+
