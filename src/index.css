@@ -59,8 +59,8 @@ Box-sizing reset
 
 
 .StorAid-logo {
-    height: 59px;
-    width: 181px;
+    height: 40px;
+    width: 100px;
   }
 
 .nav-links {
@@ -76,7 +76,8 @@ Box-sizing reset
   font-weight: 600;
 }
 
-.nav-links a:hover {
-  color: #F1C30C;
+.nav-link.active { 
+  color: var(--primary); 
 }
+
 
