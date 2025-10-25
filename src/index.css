@@ -1,7 +1,30 @@
-/* Box-sizing reset */
+Box-sizing reset
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+
+
+
+/* index.css (högst upp) */
+:root{
+  --primary: #F1C30C; /* gul */
+  --green:   #12372A; /* mörkgrön */
+  --text:    #111;
+}
+
+/* knappar använder variablerna */
+.btn--primary {
+  background: var(--primary);
+  color: var(--green);
+
+   padding: 4px 12px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
 
 .top-bar {
   background-color: #12372A;      /* mörkgrön nyans */
@@ -31,6 +54,10 @@
   
 }
 
+
+
+
+
 .StorAid-logo {
     height: 59px;
     width: 181px;
@@ -50,6 +77,6 @@
 }
 
 .nav-links a:hover {
-  color: #0a3d2e;
+  color: #F1C30C;
 }
 
