@@ -22,7 +22,19 @@ Box-sizing reset
     cursor: pointer;
     text-decoration: none;
 }
+/* hover färg genererad med AI */
 
+.theme-light .btn--primary:hover,
+.theme-light .btn--primary:focus-visible{
+  background: var(--green);
+  color: #fff;
+}
+
+.theme-dark .btn--primary:hover,
+.theme-dark .btn--primary:focus-visible{
+  background: #fff;
+  color: var(--green);
+}
 
 .top-bar {
   background-color: #12372A;      /* mörkgrön nyans */
@@ -141,8 +153,9 @@ h1 {
   background-color: #12372A; /* mörkgrön bakgrund */
 }
 
-/* Viktigt: behåll .container som en vanlig block-behållare i hero */
-.hero .container { display: block; }
+.hero .container { 
+  display: block; 
+}
 
 /* Grid på den wrapper som faktiskt innehåller både text och bild */
 .hero .heroMain-content {
@@ -180,27 +193,42 @@ h1 {
   line-height: 1.5;
   color: white;
 }
-.hero-buttons { display: flex; gap: 12px; }
+.hero-buttons { 
+  display: flex; 
+  gap: 12px;
+ }
 
-/* Global container (om du inte redan har) */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
 
-/* 2-kolumnslayout */
+
+
+
+                                  /* HeroSub deken är genererad med AI*/
+
 .about-hero .container {
   display: grid;
-  grid-template-columns: 1.1fr 1fr; /* vänster lite bredare */
-  gap: 32px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr; 
+  gap: 35px;
+  align-items: stretch;
 }
 
 /* Vänster kolumn: media */
 .about-media {
   position: relative;
-  background: #d9d9d9;     /* placeholder om ingen bild ännu */
-  min-height: 280px;        /* justera mot Figma */
+  background: #d9d9d9;     
+  min-height: 350px;        
   overflow: visible;
+  max-width: 490px;
 }
-.about-media img { width: 100%; height: auto; display: block; }
+.about-media img { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
 
 /* Överlappande grön bar */
 .about-stats {
@@ -214,15 +242,31 @@ h1 {
   display: flex; justify-content: space-around; gap: 24px;
   box-shadow: 0 6px 18px rgba(0,0,0,.15);
 }
-.about-stats .stat { display: flex; flex-direction: column; align-items: center; }
-.about-stats .stat strong { font-size: 1.75rem; line-height: 1; }
-.about-stats .stat span { font-size: .85rem; opacity: .9; }
+
+
+.about-stats .stat { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+ }
+.about-stats .stat strong { 
+  font-size: 1.75rem; 
+  line-height: 1; 
+  color: #F1C30C; 
+}
+.about-stats .stat span { 
+  font-size: .85rem; 
+  opacity: .9;
+ }
 
 .about-content { 
   max-width: 50ch;
+  
  } 
 
-.about-hero { margin: 48px; }
+.about-hero { 
+  margin: 48px;
+ }
 
 .hero-sub-title {
   font-size: 20px;
@@ -237,11 +281,14 @@ h1 {
 .subCards {
   display: flex;
   gap: 16px;
+  width: px;
+  
+  
 
 }
 
 .visionCard {
- border: 1px solid #d9d9d9;
+ border: 2px solid #d9d9d9;
   border-radius: 10px;
   padding: 6px;      
   margin: 0 0 8px;       /* så texten inte sitter mot kanten */
@@ -249,9 +296,52 @@ h1 {
 }
 
 .missionCard {
-  border: 1px solid #d9d9d9;
+  border: 2px solid #d9d9d9;
   border-radius: 10px;
-  padding: 6px;   
+  padding: 8px 10px;   
   margin: 0 0 8px;          /* så texten inte sitter mot kanten */
   
 }
+.visionCard:hover,
+.missionCard:hover {
+  border-color: var(--primary);          /* gul kant */
+}
+.visionCard h5,
+.missionCard h5 {
+  margin:0 0 8px;
+  padding:0;
+  border:0;              /* tar bort den oönskade ramen */
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Telefonblocket i rad: ikon + text */
+.about-contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ikonens storlek – annars blir den ful/ojämn */
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+/* Gör så knappen inte bryter rad mitt i ordet */
+.btn--primary { 
+  white-space: nowrap; 
+}
+
+/* Telefonnummer-stil */
+.contact-phone {
+  color: var(--green);
+  font-weight: 400;
+  text-decoration: none;
+}
+

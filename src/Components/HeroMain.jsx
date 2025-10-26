@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const HeroMain = () => {
   return (
-   <section className="hero">
+   <section className="hero theme-dark">
       <div className="container">
         <div className="heroMain-content">
           <div className="hero-content">

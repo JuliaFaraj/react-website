@@ -5,7 +5,7 @@ import logo from '../assets/Images/Logo.svg'; // stort I i Images
 const Navbar = () => {
   return (
     <header>
-      <div className="navbar">
+      <div className="navbar theme-light">
         <div className="container">
           <NavLink className="logo" to="/">
             <img src={logo} alt="StorAid logo" className="logo" />
