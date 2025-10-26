@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Testimonials = () => {
+const Services = () => {
   return (
     <div>
-      
+      Services
     </div>
   )
 }
 
-export default Testimonials
+export default Services

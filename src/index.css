@@ -1,6 +1,39 @@
-/* Box-sizing reset */
+Box-sizing reset
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+/* index.css (högst upp) */
+:root{
+  --primary: #F1C30C; /* gul */
+  --green:   #12372A; /* mörkgrön */
+  --text:    #111;
+}
+
+/* knappar använder variablerna */
+.btn--primary {
+  background: var(--primary);
+  color: var(--green);
+
+   padding: 6px 12px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* hover färg genererad med AI */
+
+.theme-light .btn--primary:hover,
+.theme-light .btn--primary:focus-visible{
+  background: var(--green);
+  color: #fff;
+}
+
+.theme-dark .btn--primary:hover,
+.theme-dark .btn--primary:focus-visible{
+  background: #fff;
+  color: var(--green);
 }
 
 .top-bar {
@@ -21,7 +54,7 @@
   margin-left: 10px;
   cursor: pointer;
 }
-.navbar {
+.navbar .container {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -31,9 +64,9 @@
   
 }
 
-.StorAid-logo {
-    height: 59px;
-    width: 181px;
+.logo {
+    height: 50px;
+    width: 140px;
   }
 
 .nav-links {
@@ -49,7 +82,266 @@
   font-weight: 600;
 }
 
-.nav-links a:hover {
-  color: #0a3d2e;
+.nav-link.active { 
+  color: var(--primary); 
+}
+
+
+/* Gör bandet fullbredd */
+.footer {
+  background-color: var(--green);
+  color: #fff;
+}
+
+/* Behåll layouten för innehållet */
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  /* container-bredd och centrering kommer från din globala .container
+     (max-width: 1200px; margin: 0 auto; padding: 0 20px;) */
+}
+
+/* Trimma marginaler så inget “puttar” */
+.footer p { 
+  margin: 0; 
+  padding: 20px 10px; 
+}
+.footer-links { 
+  display: flex; 
+  align-items: 
+  center; 
+  gap: .5rem; 
+}
+
+
+ /* === Sticky footer – utan att röra JSX === */
+html, body, #root { 
+  height: 100%;
+ }
+body { 
+  margin: 0; 
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Låt sidinnehållet ta plats, så footern trycks ner */
+main { 
+  flex: 1; 
+}
+/* (Om du har en .wrapper runt main: ge den också flex:1) */
+.wrapper { 
+  flex: 1;
+ }
+
+
+h1 {
+  color:#F1C30C ;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+/* ===== HERO LAYOUT ===== */
+.hero { 
+  padding: 60px 0; 
+  background-color: #12372A; /* mörkgrön bakgrund */
+}
+
+.hero .container { 
+  display: block; 
+}
+
+/* Grid på den wrapper som faktiskt innehåller både text och bild */
+.hero .heroMain-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin-left: 60px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-image img {
+  max-width: 1183px;
+  height: 320px;
+  display: block;
+  margin-bottom: 0px;
+}
+
+.hero-title   { 
+  margin: 0 0 12px; 
+
+}
+.hero-subtitle{
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: white;
+}
+.hero-ingress {
+  margin: 0 0 20px;
+  max-width: 60ch;
+  line-height: 1.5;
+  color: white;
+}
+.hero-buttons { 
+  display: flex; 
+  gap: 12px;
+ }
+
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+}
+
+
+
+
+                                  /* HeroSub deken är genererad med AI*/
+
+.about-hero .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 35px;
+  align-items: stretch;
+}
+
+/* Vänster kolumn: media */
+.about-media {
+  position: relative;
+  background: #d9d9d9;     
+  min-height: 350px;        
+  overflow: visible;
+  max-width: 490px;
+}
+.about-media img { 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+/* Överlappande grön bar */
+.about-stats {
+  position: absolute;
+  left: 16px; right: 16px;
+  bottom: -24px;            /* överlappar grå ytan nedåt */
+  background: var(--green);
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex; justify-content: space-around; gap: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+
+.about-stats .stat { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+ }
+.about-stats .stat strong { 
+  font-size: 1.75rem; 
+  line-height: 1; 
+  color: #F1C30C; 
+}
+.about-stats .stat span { 
+  font-size: .85rem; 
+  opacity: .9;
+ }
+
+.about-content { 
+  max-width: 50ch;
+  
+ } 
+
+.about-hero { 
+  margin: 48px;
+ }
+
+.hero-sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #F1C30C;
+}
+.hero-sub-ingress {
+  line-height: 1.5;
+  color:#12372A;
+}
+
+.subCards {
+  display: flex;
+  gap: 16px;
+  width: px;
+  
+  
+
+}
+
+.visionCard {
+ border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 6px;      
+  margin: 0 0 8px;       /* så texten inte sitter mot kanten */
+  
+}
+
+.missionCard {
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 8px 10px;   
+  margin: 0 0 8px;          /* så texten inte sitter mot kanten */
+  
+}
+.visionCard:hover,
+.missionCard:hover {
+  border-color: var(--primary);          /* gul kant */
+}
+.visionCard h5,
+.missionCard h5 {
+  margin:0 0 8px;
+  padding:0;
+  border:0;              /* tar bort den oönskade ramen */
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+/* Telefonblocket i rad: ikon + text */
+.about-contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Ikonens storlek – annars blir den ful/ojämn */
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+
+/* Gör så knappen inte bryter rad mitt i ordet */
+.btn--primary { 
+  white-space: nowrap; 
+}
+
+/* Telefonnummer-stil */
+.contact-phone {
+  color: var(--green);
+  font-weight: 400;
+  text-decoration: none;
 }
 

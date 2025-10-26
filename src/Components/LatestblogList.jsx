@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Testimonials = () => {
+const LatestblogList = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Testimonials = () => {
   )
 }
 
-export default Testimonials
+export default LatestblogList
