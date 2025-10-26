@@ -1,22 +1,37 @@
-// src/App.jsx
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import TopBar from './Components/Topbar.jsx';
+import Topbar from './Components/Topbar.jsx';
 import Navbar from './Components/Navbar.jsx';
 import './index.css';
 import Contact from './Pages/Contact.jsx';
+import Home from './Pages/Home.jsx';
+import About from './Pages/About.jsx';
+import Services from './Pages/Services.jsx';
+import Footer from './Components/Footer.jsx';
+import HeroMain from './Components/HeroMain.jsx';
+import HeroSub from './Components/HeroSub.jsx';
 
-export default function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <TopBar />          {/* <-- Lägg till den här */}
+          <div className="App-content">
+
+      <Topbar />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<div>Home</div>} />
-        <Route path="/about" element={<div>About</div>} />
-        <Route path="/services" element={<div>Services</div>} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+     
+      <div className="Wrapper">
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+      <Footer />
+      </div>
     </BrowserRouter>
   );
-}
+};
+
+export default App;
