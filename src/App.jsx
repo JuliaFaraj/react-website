@@ -9,6 +9,9 @@ import Services from './Pages/Services.jsx';
 import Footer from './Components/Footer.jsx';
 import HeroMain from './Components/HeroMain.jsx';
 import HeroSub from './Components/HeroSub.jsx';
+import Brands from './Components/Brands.jsx';
+import OurServices from './Components/OurServices.jsx';
+import Testimonials from './Components/Testimonials.jsx';
 
 const App = () => {
   return (
