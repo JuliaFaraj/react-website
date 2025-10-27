@@ -12,6 +12,7 @@ import HeroSub from './Components/HeroSub.jsx';
 import Brands from './Components/Brands.jsx';
 import OurServices from './Components/OurServices.jsx';
 import Testimonials from './Components/Testimonials.jsx';
+import WhychooseUs from './Components/WhychooseUs.jsx';
 
 const App = () => {
   return (

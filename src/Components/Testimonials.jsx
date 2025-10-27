@@ -13,8 +13,13 @@
  *   - Lägga till en mindre "Stars"-komponent för betyg.
  *   - Förklara hur jag senare kan ersätta de hårdkodade värdena med data från API.
  *
- *  All kod har granskats och anpassats av mig efteråt.
+ *  Jag har sedan anpassat och förbättrat koden manuellt för att passa
  */
+
+
+// TODO(bg): koppla bakgrundsbild via import + overlay (#12372A @ 80%).
+
+import React from "react";
 
 
 // EXEMPELDATA (tas bort sen när jag matar in från API)

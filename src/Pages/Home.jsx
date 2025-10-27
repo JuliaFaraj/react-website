@@ -5,6 +5,7 @@ import Brands from '../Components/Brands.jsx';
 import { Link, NavLink } from "react-router-dom";   // avsluta med semikolon
 import OurServices from "../Components/OurServices.jsx"; // ingen klammer
 import Testimonials from '../Components/Testimonials.jsx';
+import WhychooseUs from '../Components/WhychooseUs.jsx';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
     <Brands />
     <OurServices />
     <Testimonials />
+    <WhychooseUs />
 
     </main>
   )
