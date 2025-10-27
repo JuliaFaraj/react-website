@@ -8,6 +8,15 @@ Box-sizing reset
   --primary: #F1C30C; /* gul */
   --green:   #12372A; /* mörkgrön */
   --text:    #111;
+
+  --container-max: 1200px;     /* ändra till 1280px om ni kör det */
+  --gutter: 24px;
+}
+
+
+.container {
+  width: min(100% - 2*var(--gutter), var(--container-max));
+  margin-inline: auto;
 }
 
 /* knappar använder variablerna */
@@ -345,3 +354,91 @@ h1 {
   text-decoration: none;
 }
 
+.brands {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FAF8EC;
+  margin: auto;
+  margin-top: 80px;
+}
+
+
+.brands img {
+  max-height: 60px;
+  max-width: 150px;
+  padding: 15px 30px;
+}
+
+.our-services {
+padding: 48px 0;
+}
+
+.our-services-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+}
+
+.hero-sub-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.our-services-header {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 24px 40px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.hero-sub-text {
+  font-size: 32px;
+  line-height: 1.1;
+  margin: 0;
+  color: #12372A;
+  max-width: 25ch;
+}
+.hero-sub-ingress {
+  margin: 0;
+  color: #12372A;
+}
+
+/* Nedre rad: vänster (2 kort) – media – höger (2 kort), genererad med AI */
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 560px) 1fr;  
+  gap: 20px 36px; 
+  align-items: start;
+}
+
+.services-col {
+  display: grid;
+  gap: 16px; 
+}
+
+.service-card {
+  border: 2px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 8px 10px;   
+  margin: 0 0 8px; 
+
+}
+
+.service-card:hover {
+  border-color: var(--primary); 
+}         /* gul kant */
+
+.service-card h5 {
+  margin: 0 0 8px 0;
+}
+
+.services-media {
+  background: #cfcfcf;
+  min-height: 300px;
+  max-width: 400px;
+}
