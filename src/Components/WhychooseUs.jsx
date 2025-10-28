@@ -39,13 +39,10 @@ const WhyChooseUs = () => {
           {/* Höger kolumn: API-kort (placeholder) */}
           <div className="why-right">
             <div className="api-card">
-              <p><p className="why-lead">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida.
-            </p> API  här senare</p>
-
-
-
-              
+              <p className="why-lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida.
+              </p>
+              <p>API här senare</p>
             </div>
           </div>
         </div>
