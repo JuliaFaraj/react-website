@@ -3,13 +3,12 @@ Box-sizing reset
   box-sizing: border-box;
 }
 
-/* index.css (högst upp) */
 :root{
-  --primary: #F1C30C; /* gul */
-  --green:   #12372A; /* mörkgrön */
+  --primary: #F1C30C; 
+  --green:   #12372A; 
   --text:    #111;
 
-  --container-max: 1200px;     /* ändra till 1280px om ni kör det */
+  --container-max: 1200px;     
   --gutter: 24px;
 }
 
@@ -19,7 +18,7 @@ Box-sizing reset
   margin-inline: auto;
 }
 
-/* knappar använder variablerna */
+
 .btn--primary {
   background: var(--primary);
   color: var(--green);
@@ -31,7 +30,7 @@ Box-sizing reset
     cursor: pointer;
     text-decoration: none;
 }
-/* hover färg genererad med AI */
+
 
 .theme-light .btn--primary:hover,
 .theme-light .btn--primary:focus-visible{
@@ -46,7 +45,7 @@ Box-sizing reset
 }
 
 .top-bar {
-  background-color: #12372A;      /* mörkgrön nyans */
+  background-color: #12372A;      
   color: #fff;
   font-size: 0.9rem;
   padding: 1px 18px;
@@ -478,7 +477,7 @@ padding: 48px 0;
 .testimonials {
   padding: 72px 0;
   color: #fff;
-  background-color: #1F6B57;
+  background-color: #12372A;
 }
 
 /* Rubrik + ingress, centrerat */
@@ -659,7 +658,8 @@ padding: 48px 0;
   margin-top: 28px;
   
 }
-.pricing-card1, .pricing-card3, .pricing-card4 {
+
+.pricing-card1, .pricing-card2, .pricing-card3, .pricing-card4 {
   position: relative;
   background: #F1FFEA;
   color: #12372A;
@@ -672,17 +672,26 @@ padding: 48px 0;
   text-align: center;
 }
 
-.pricing-card2 {
-  position: relative;
+.pricing-card1:hover { 
   background: #12372A;
-  color: #ffff;
-  border: 1px solid #e8e8e8;
-  border-radius: 3%;
-  padding: 20px 22px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  width: 220px; /* matchar kolumnen exakt */
-  min-height: 320px;
-  text-align: center;
+  color: #fff;
+  border-color: #12372A;
+}
+
+.pricing-card2:hover { 
+  background: #12372A;
+  color: #fff;
+  border-color: #12372A;
+}
+.pricing-card3:hover { 
+  background: #12372A;
+  color: #fff;
+  border-color: #12372A;
+}
+.pricing-card4:hover { 
+  background: #12372A;
+  color: #fff;
+  border-color: #12372A;
 }
 
 .pricing-card-title {
@@ -690,6 +699,70 @@ padding: 48px 0;
   font-weight: 700;
   margin: 0 0 12px 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .pricing-card-price {
   font-size: 28px;
@@ -727,5 +800,43 @@ padding: 48px 0;
 .pricing-title {
   font-size: 24px;
   font-weight: 800;
+}
+
+/* CTA – använd container som wrapper */
+.cta-section {
+  padding: 80px 0;
+  background-color: #12372A;
+  color: #fff;
+  text-align: center;
+}
+
+/* Viktigt: gör container vertikal just i CTA */
+.cta-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;              /* om din globala container redan är flex */
+  flex-direction: column;     /* stapla under varandra */
+  align-items: center;        /* centrera horisontellt */
+  gap: 12px;                  /* avstånd mellan raderna */
+}
+
+.cta-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  max-width: 40ch;
+  display: block;             /* inte inline-flex */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+  max-width: 116ch;
+  display: block;             /* inte inline-flex */
+  margin-left: auto;
+  margin-right: auto;
 }
 

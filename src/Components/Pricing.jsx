@@ -2,7 +2,7 @@ import React from 'react'
 
 const Pricing = () => {
   return (
-    <section className="pricing-section">
+    <section className="pricing-section theme-dark">
         <div className="container">
             <h1 className="pricing-title">Pricing Plans</h1>
             <p className="pricing-lead">Find the Perfect Plan for Your Storage Needs</p>
@@ -19,10 +19,10 @@ const Pricing = () => {
                         <li>Duis gravida enim porta</li>
                         <li>Etiam eget libero non ligula</li>
                     </ul>
-                    <button className="pricing-card-button pricing-card-button--primary">Rent Now</button>
+                    <button className="btn--primary">Rent Now</button>
                 </div>
 
-                <div className="pricing-card2 theme-dark">
+                <div className="pricing-card2 theme-light">
                     <h2 className="pricing-card-title">Meduim Unit</h2>
                     <h3 className="pricing-card-price">$100/month</h3>
                     <p className="pricing-card-subtitle">Phasellus sollicitudin sapien eu massa accumsan, quis semper odio suscipit.</p>
@@ -33,7 +33,7 @@ const Pricing = () => {
                         <li>Duis gravida enim porta</li>
                         <li>Etiam eget libero non ligula</li>
                     </ul>
-                    <button className="pricing-card-button pricing-card-button--primary">Rent Now</button>
+                    <button className="btn--primary">Rent Now</button>
                 </div>
 
                 <div className="pricing-card3 theme-light">
@@ -47,7 +47,7 @@ const Pricing = () => {
                         <li>Duis gravida enim porta</li>
                         <li>Etiam eget libero non ligula</li>
                     </ul>
-                    <button className="pricing-card-button pricing-card-button--primary">Rent Now</button>
+                    <button className="btn--primary">Rent Now</button>
                 </div>
 
                 <div className="pricing-card4 theme-light">
@@ -61,7 +61,7 @@ const Pricing = () => {
                         <li>Duis gravida enim porta</li>
                         <li>Etiam eget libero non ligula</li>
                     </ul>
-                    <button className="pricing-card-button pricing-card-button--primary">Rent Now</button>
+                    <button className="btn--primary">Rent Now</button>
                 </div>
             </div>
         </div>

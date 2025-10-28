@@ -7,6 +7,7 @@ import OurServices from "../Components/OurServices.jsx"; // ingen klammer
 import Testimonials from '../Components/Testimonials.jsx';
 import WhychooseUs from '../Components/WhychooseUs.jsx';
 import Pricing from '../Components/Pricing.jsx';
+import CallToAction from '../Components/CallToAction.jsx';
 
 const Home = () => {
   return (
@@ -18,6 +19,8 @@ const Home = () => {
     <Testimonials />
     <WhychooseUs />
     <Pricing />
+    <CallToAction />
+    <LatestBlogs />
 
     </main>
   )
