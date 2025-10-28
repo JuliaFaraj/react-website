@@ -645,3 +645,87 @@ padding: 48px 0;
   max-width: 350px;
   margin: 20px 0; 
 }
+
+.pricing-section {
+  padding: 80px 0;
+  background-color: #fff /* byt till din färg */
+}
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   
+  gap: 32px;
+  justify-content: center;  /* centrera grid i containern */
+  align-items: start;
+  margin-top: 28px;
+  
+}
+.pricing-card1, .pricing-card3, .pricing-card4 {
+  position: relative;
+  background: #F1FFEA;
+  color: #12372A;
+  border: 1px solid #e8e8e8;
+  border-radius: 3%;
+  padding: 20px 22px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  width: 220px; /* matchar kolumnen exakt */
+  min-height: 320px;
+  text-align: center;
+}
+
+.pricing-card2 {
+  position: relative;
+  background: #12372A;
+  color: #ffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 3%;
+  padding: 20px 22px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  width: 220px; /* matchar kolumnen exakt */
+  min-height: 320px;
+  text-align: center;
+}
+
+.pricing-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.pricing-card-price {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  color: #F1C30C;
+}
+
+.pricing-card-features {
+  padding: 0;
+  margin: 20px ;
+  text-align: left;
+  list-style: disc;
+}
+
+.pricing-card-button--primary {
+  margin-top: 20px;
+  color: #12372A;
+  background-color: #F1C30C;
+  border: none;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.pricing-lead {
+  font-size: 30px;
+  color: #111;
+  font-weight: 700;
+  max-width: 25ch;
+}
+
+.pricing-title {
+  font-size: 24px;
+  font-weight: 800;
+}
+
