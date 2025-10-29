@@ -12,7 +12,9 @@ const whyItems = [
   { id: 4, icon: iconSupport,    title: "Support 24/7",    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo." },
 ];
 
-const WhyChooseUs = () => {
+// Framtagen med stöd av AI
+
+const WhyChooseUs = () => {    
   return (
     <section className="why-section">
       <div className="container">
