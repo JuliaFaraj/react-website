@@ -705,65 +705,6 @@ padding: 48px 0;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .pricing-card-price {
   font-size: 28px;
   font-weight: 800;
@@ -835,8 +776,123 @@ padding: 48px 0;
   font-weight: 500;
   margin: 0 0 24px 0;
   max-width: 116ch;
-  display: block;             /* inte inline-flex */
+  display: block;             
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Sektion & grid */
+.Latestblogs {
+  padding: 64px 0 72px;
+}
+.Latestblogs .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.card-media {
+  width: 100%;
+  height: 180px;            /* gör den längre/kortare vid behov */
+  background: #D9D9D9;
+  border: 1px solid #CFCFCF;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+.Latestblogs .title {
+  grid-column: 1 / -1; /* Satt på rätt plats med hjälpa av AI */
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.Latestblog-subtitle {
+  grid-column: 1 / 7;
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.Latestblogs-lead {
+  grid-column: 7 / -1; /* Satt på rätt plats med hjälpa av AI */
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Kort-grid */
+.Latestblogs-cards {
+  
+  grid-column: 1 / -1;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.Latestblogs-card1, .Latestblogs-card2, .Latestblogs-card3 {
+  border-radius: 12px;
+  border: solid 1px #e0e0e0;
+  padding: 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 1%;
+  padding: 20px 20px;
+  min-height: 400px;
+  background-color: #F1FFEA;
+}
+
+.Latestblogs-card1:hover,.Latestblogs-card2:hover, .Latestblogs-card3:hover {
+  background-color: #0f3a2f;
+  color: #eaf1ee;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+}
+
+.date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  opacity: .9;
+}
+.date-badge::before { 
+  content: "🗓️"; /* Kalender symbol framtagen av AI*/
+  font-size: 14px; 
+  line-height: 1; 
+} 
+
+.card-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+.Latestblogs-card-subtitle {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: .9;
+}
+
+/* Read more-länk – pilrörelse */
+.read-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #F1C30C;
+}
+.read-more-link::after {
+  content: "→";  /* pil-symbol framtagen av AI*/
+  transform: translateX(0);
+  transition: transform .15s ease;
+}
+.read-more-link:hover::after {
+  transform: translateX(3px);
 }
 
