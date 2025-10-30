@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
   return (
@@ -8,8 +9,7 @@ const CallToAction = () => {
         <p className="cta-subtitle">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac blandit nisi non sodales augue. Phasellus eget elit gravida.
         </p>
-        <a href="#" className="btn--primary">Book Now</a>
-
+        <Link to="/contact" className="btn--primary">Book Now</Link>
       </div>
     </section>
   )

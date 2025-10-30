@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
               <p className="why-lead">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque molestie nisl sed dui lacinia gravida.
               </p>
-              <p>API här senare</p>
+                   <div className="why-card-media" aria-hidden="true"></div>
             </div>
           </div>
         </div>

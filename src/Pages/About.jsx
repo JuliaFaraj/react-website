@@ -1,10 +1,16 @@
 import React from 'react'
+import AboutUsHero from '../Components/AboutUsHero'
+import HeroSub from '../Components/HeroSub'
+
+
+
 
 const About = () => {
   return (
-    <div>
-      About Us Page
-    </div>
+    <>
+    <AboutUsHero />
+    <HeroSub />
+    </>
   )
 }
 
