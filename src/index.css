@@ -1127,3 +1127,126 @@ padding: 48px 0;
   cursor: pointer;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Centrera tvåkolumnsblocket och ge fasta bredder så högern inte hamnar vid kanten */
+.FAQ-section .Accordion-content {
+  display: grid;
+  grid-template-columns: 600px 520px; /* vänster / höger — justera 600/520 efter smak */
+  column-gap: 64px;
+  align-items: start;
+  justify-content: center;           /* centrerar hela tvåkolumnsblocket i containern */
+}
+
+/* Se till att varje kort staplar rubrik + svar under varandra */
+.FAQ-section .Accordion-item {
+  grid-column: 2 / 3;
+  justify-self: stretch;
+  width: 100%;
+  display: block;                    /* tvinga block-layouter (ingen grid/flex här) */
+}
+
+/* Svar ska alltid bli en blockrad under knappen när öppet */
+.FAQ-section .Accordion-answer {
+  display: none;                     /* stängt läge */
+  width: 100%;
+  float: none;                       /* säkerställ att inget flyter */
+}
+.FAQ-section .Accordion-item.is-open .Accordion-answer { display: block; }
+
+.FAQ-section .Accordion-item + .Accordion-item { 
+  margin-top: 2px;
+ }
+
+/* Lås vänsterkolumnens element i kolumn 1 (så inte intro smiter höger) */
+.FAQ-section .Accordion-title,
+.FAQ-section .Accordion-subtitle,
+.FAQ-section .Accordion-intro { grid-column: 1 / 2; }
+
+.Accordion-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #F1C30C;                             
+}
+.Accordion-subtitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #12372A;                             
+}
+
+
+.FAQ-section .Accordion-item {
+  grid-column: 2;
+  width: 100%;
+  margin: 0 0 14px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;       
+;                 
+}
+.FAQ-section {
+  margin-bottom: 80px;
+}
+
+.FAQ-section .Accordion-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #12372A;                              
+  background: #EDEDE9;                         
+}
+.FAQ-section .Accordion-question:hover { 
+  background: #E6E5E0;
+ }
+
+.FAQ-section .acc-icon { transition: transform .2s ease, color .15s ease; color: #12372A; }
+
+.FAQ-section .Accordion-item.is-open .Accordion-question {
+  background: #F3D354;                         /* gul från din design */
+  color: #ffffff;                              /* vit text */
+}
+.FAQ-section .Accordion-item.is-open .acc-icon { color: #ffffff; transform: rotate(180deg); }
+
+.FAQ-section .Accordion-answer {
+  display: none;
+  padding: 16px 18px;
+  border-top: 1px solid #E6E3D6;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #2F342E;
+  background: #ffffff;
+}
+.FAQ-section .Accordion-item.is-open .Accordion-answer { display: block; }
+.FAQ-section .Accordion-answer p { margin: 0; }
+
+.FAQ-section .Accordion-intro {
+  grid-column: 1;          /* <— förankra i vänster kolumn */
+  margin: 0 0 16px;        /* tajt avstånd nedåt */
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2F342E;          /* samma textfärg som övrigt bröd */
+  max-width: 520px;        /* valfritt: håll radlängden behaglig */
+}
