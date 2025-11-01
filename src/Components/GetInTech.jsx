@@ -7,7 +7,7 @@ const GetInTech = () => {
     <div className="GetInTech-content">
 
       <div className="GetInTech-left">
-        <h2 className="GetInTech-title">Get In Touch</h2>
+        <h2 className="GetInTech-title">Get In Tech</h2>
         <p className="GetInTech-subtitle">Get Personalized Assistance – Contact Us</p>
         <div className="GetInTech-description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo
