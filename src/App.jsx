@@ -8,7 +8,7 @@ import Topbar from './Components/Topbar.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
 import AboutUsHero from './Components/AboutUsHero.jsx'
-
+import GetInTech from './Components/GetInTech.jsx'
 
 const App = () => {
   return (
