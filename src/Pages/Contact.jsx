@@ -2,6 +2,7 @@
 import React from 'react'
 import ContactUsHero from '../Components/ContactUs.jsx'
 import GetInTech from '../Components/GetInTech.jsx'
+import Accordion from '../Components/Accordion.jsx'
 
 
 const Contact = () => {
@@ -9,6 +10,7 @@ const Contact = () => {
     <>
         <ContactUsHero />
           <GetInTech />
+          <Accordion />
         </>
   )
 }
