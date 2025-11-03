@@ -34,10 +34,9 @@ const Accordion = () => {
   ];
 
   // Här skapas ett “state” för att hålla reda på vilka frågor som är öppna.
-  // useState(new Set([0])) betyder:
-  // - Startar med en ny “Set” (ungefär som en lista, men den kan bara innehålla unika värden).
-  // -Använder Set istället för vanlig array, för att enkelt kunna lägga till/ta bort öppna frågor utan att skapa dubbletter.
-  const [open, setOpen] = useState(new Set([0]));
+  // Använder Set istället för vanlig array, för att enkelt kunna lägga till/ta bort öppna frågor utan att skapa dubbletter.
+  const [open, setOpen] = useState(new Set([0])); // Första frågan (index 0) är öppen från början.   // useState(new Set([0])) betyder:
+
 
   // Den här funktionen körs varje gång användaren klickar på en fråga.
   // “i” är indexet för den fråga som klickats på.
@@ -45,45 +44,39 @@ const Accordion = () => {
   // Om frågan redan är öppen → ta bort den från Set (stäng den).
   // Om frågan inte är öppen → lägg till den i Set (öppna den).
   // Sedan returnerar vi “next”, och React uppdaterar gränssnittet.
-  const toggle = (i) => {
-    setOpen((prev) => {
-      const next = new Set(prev);
-      if (next.has(i)) next.delete(i);
-      else next.add(i);
-      return next;
+
+  const toggle = (i) => { // i = index för frågan som klickats på
+    setOpen((prev) => { // prev = tidigare state (Set med öppna frågor)
+      const next = new Set(prev); // Skapar en kopia av tidigare state
+      if (next.has(i)) next.delete(i); // Om frågan är öppen, ta bort den (stäng)
+      else next.add(i); // Om frågan är stängd, lägg till den (öppna)
+      return next; // Returnerar det nya Set:et med uppdaterade öppna frågor
     });
   };
 
 
-  // Här börjar själva strukturen (JSX) som ska visas på sidan.
-  // JSX ser ut som HTML, men kan innehålla JavaScript (inom { }).
   return (
     <div className="FAQ-section">
       <div className="Container">
 
-        {/* Accordion-content används som grid i CSS (vänster = rubriker, höger = frågor) */}
         <div className="Accordion-content">
 
-          {/* Vänsterkolumn – rubrik och introduktionstext */}
           <h2 className="Accordion-title">FAQs</h2>
           <p className="Accordion-subtitle">Frequently Asked Questions</p>
           <p className="Accordion-intro">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
           </p>
 
-          {/* Här går vi igenom listan med frågor (items) med .map() */}
           {/* .map() betyder: “för varje fråga, skapa ett nytt element på sidan” */}
-          {items.map((it, i) => {
+          {items.map((it, i) => { // it = själva frågeobjektet, i = index (0, 1, 2, ...)
             // isOpen är true om frågan finns i vår “open”-Set (dvs om den är öppen)
-            const isOpen = open.has(i);
+            const isOpen = open.has(i); 
 
-            // Vi returnerar JSX för en enda fråga
-            return (
+            return ( // Returnerar JSX för varje fråga
               // Varje fråga (Accordion-item) får en “key” för att React ska kunna hålla reda på dem.
               // Om frågan är öppen, lägg till klassen “is-open” → CSS visar svaret + gul bakgrund.
-              <div key={i} className={`Accordion-item${isOpen ? " is-open" : ""}`}>
+              <div key={i} className={`Accordion-item${isOpen ? " is-open" : ""}`}> {/* Accordion-item är varje fråga + svar */}
 
-                {/* Knappen användaren klickar på */}
                 <button
                   className="Accordion-question"
                   // aria-expanded är ett “tillgänglighetsattribut” (hjälper skärmläsare förstå om sektionen är öppen)
@@ -91,13 +84,12 @@ const Accordion = () => {
                   // aria-controls kopplar knappen till det element som visar svaret
                   aria-controls={`acc-answer-${i}`}
                   // onClick kör toggle-funktionen när man klickar
-                  onClick={() => toggle(i)}
+                  onClick={() => toggle(i)} 
                 >
-                  {/* Texten på frågan */}
-                  {it.q}
+                  
+                  {it.q} {/* Själva frågetexten */}
 
                   {/* Font Awesome-ikon (pil nedåt) */}
-                  {/* I React används className istället för class */}
                   {/* Vi lägger även till en extra klass acc-icon--open om frågan är öppen (roterar pilen) */}
                   <i
                     className={`fa-solid fa-chevron-down acc-icon${isOpen ? " acc-icon--open" : ""}`}

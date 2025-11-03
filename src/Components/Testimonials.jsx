@@ -1,7 +1,5 @@
 /*
- * ------------------------------------------------------------
- *  FIL: Testimonials.jsx
- * ------------------------------------------------------------
+ *
  *  Denna komponent är delvis genererad och förklarad med hjälp av AI (ChatGPT).
  *
  *  Jag utgick från en tidigare uppgift där jag hade en grundstruktur för
@@ -13,7 +11,7 @@
  *   - Lägga till en mindre "Stars"-komponent för betyg.
  *   - Förklara hur jag senare kan ersätta de hårdkodade värdena med data från API.
  *
- *  Jag har sedan anpassat och förbättrat koden manuellt för att passa
+ *  
  */
 
 

@@ -1,33 +1,72 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Subscribe = () => {
-  return (
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const validate = (v) => (/^\S+@\S+\.\S+$/.test(v) ? "" : "Enter a valid email");
+
+  const handleChange = (e) => {
+    const v = e.target.value;
+    setEmail(v);
+    // rensa/uppdatera fel live
+    const msg = validate(v);
+    setErrors((prev) => ({ ...prev, email: msg }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const msg = validate(email);
+    if (msg) {
+      setErrors({ email: msg });
+      return;
+    }
+    setErrors({});
+    
+    console.log("Subscribed:", { email });
+  };
+
+   return (
     <section className="newsletter theme-light">
       <div className="container">
         <div className="newsletter-content">
-          <div class="newsletter-left">
-            <div class="nl-title">Subscribe Our Newsletter</div>
-            <div class="nl-subtitle">Subscribe to our newsletter to receive early discount offers, updates and info.</div>
+          <div className="nl-left">
+            <div className="nl-title">Subscribe Our Newsletter</div>
+            <div className="nl-subtitle">
+              Subscribe to our newsletter to receive early discount offers, updates and information.
+            </div>
           </div>
- {/* AI förklarade att man skriver ut attribut för att beskriva exakt hur ett element ska fungera och bete sig.
- Varje attribut tillför en bit information till webbläsaren (och till React).*/}
 
-          <form className="newsletter-form" action="#" method="post" noValidate>
+          <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
             <input
-                id="nl-email"
-                name="email"
-                type="email"
-                placeholder="Enter Your Email"
-                autoComplete="email"
-                required
-                className="nl-input"
-                />
-  <button type="submit" className="btn--primary">Submit</button>
-</form>
+              id="nl-email"
+              name="email"
+              type="email"
+              placeholder="Enter Your Email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={handleChange}
+              className={`nl-input form-input ${errors.email ? "is-invalid" : ""}`}
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "nl-email-error" : undefined}
+            />
+            {errors.email && (
+              <small id="nl-email-error" className="field-error">{errors.email}</small>
+            )}
+
+            <button type="submit" className="btn--primary">Submit</button>
+          </form>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Subscribe
+export default Subscribe;
+
+
+
+
+
+
