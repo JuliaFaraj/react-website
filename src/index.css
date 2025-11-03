@@ -7,6 +7,7 @@ Box-sizing reset
   --primary: #F1C30C; 
   --green:   #12372A; 
   --text:    #111;
+  --danger:   #D93025;
 
   --container-max: 1200px;     
   --gutter: 24px;
@@ -1390,3 +1391,9 @@ padding: 48px 0;
   height: 18px;
   display: block;
 }
+
+.form-input:focus,
+.form-input:focus-visible {
+  border-color: var(--green);
+}
+
