@@ -96,23 +96,19 @@ Box-sizing reset
 }
 
 
-/* Gör bandet fullbredd */
 .footer {
   background-color: var(--green);
   color: #fff;
 }
 
-/* Behåll layouten för innehållet */
 .footer .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  /* container-bredd och centrering kommer från din globala .container
-     (max-width: 1200px; margin: 0 auto; padding: 0 20px;) */
+  
 }
 
-/* Trimma marginaler så inget “puttar” */
 .footer p { 
   margin: 0; 
   padding: 20px 10px; 
@@ -125,7 +121,6 @@ Box-sizing reset
 }
 
 
- /* === Sticky footer – utan att röra JSX === */
 html, body, #root { 
   height: 100%;
  }
@@ -139,11 +134,9 @@ body {
   flex-direction: column;
 }
 
-/* Låt sidinnehållet ta plats, så footern trycks ner */
 main { 
   flex: 1; 
 }
-/* (Om du har en .wrapper runt main: ge den också flex:1) */
 .wrapper { 
   flex: 1;
  }
@@ -156,17 +149,23 @@ h1 {
 
 }
 
+
+
+
+
+
+
+
 /* ===== HERO LAYOUT ===== */
 .hero { 
   padding: 60px 0; 
-  background-color: #12372A; /* mörkgrön bakgrund */
+  background-color: #12372A; 
 }
 
 .hero .container { 
   display: block; 
 }
 
-/* Grid på den wrapper som faktiskt innehåller både text och bild */
 .hero .heroMain-content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -216,7 +215,7 @@ h1 {
 
 
 
-                                  /* HeroSub deken är genererad med AI*/
+                                  /* HeroSub delen är till viss del genererad med hjälp av AI*/
 
 .about-hero .container {
   display: grid;
@@ -225,7 +224,6 @@ h1 {
   align-items: stretch;
 }
 
-/* Vänster kolumn: media */
 .about-media {
   position: relative;
   background: #d9d9d9;     
@@ -239,11 +237,10 @@ h1 {
   display: block; 
 }
 
-/* Överlappande grön bar */
 .about-stats {
   position: absolute;
   left: 16px; right: 16px;
-  bottom: -24px;            /* överlappar grå ytan nedåt */
+  bottom: -24px;           
   background: var(--green);
   color: #fff;
   border-radius: 8px;
@@ -300,7 +297,7 @@ h1 {
  border: 2px solid #d9d9d9;
   border-radius: 10px;
   padding: 6px;      
-  margin: 0 0 8px;       /* så texten inte sitter mot kanten */
+  margin: 0 0 8px;      
   
 }
 
@@ -308,18 +305,18 @@ h1 {
   border: 2px solid #d9d9d9;
   border-radius: 10px;
   padding: 8px 10px;   
-  margin: 0 0 8px;          /* så texten inte sitter mot kanten */
+  margin: 0 0 8px;         
   
 }
 .visionCard:hover,
 .missionCard:hover {
-  border-color: var(--primary);          /* gul kant */
+  border-color: var(--primary);          
 }
 .visionCard h5,
 .missionCard h5 {
   margin:0 0 8px;
   padding:0;
-  border:0;              /* tar bort den oönskade ramen */
+  border:0;             
 }
 
 .about-actions {
@@ -328,7 +325,6 @@ h1 {
   gap: 35px;
 }
 
-/* Telefonblocket i rad: ikon + text */
 .about-contact {
   display: flex;
   align-items: center;
@@ -347,7 +343,6 @@ h1 {
   white-space: nowrap; 
 }
 
-/* Telefonnummer-stil */
 .contact-phone {
   color: var(--green);
   font-weight: 400;
@@ -444,26 +439,7 @@ padding: 48px 0;
 }
 
 
-/*
- * ================================================================
- *  FIL: testimonials.css
- * ================================================================
- *  Stilen för Testimonials-sektionen har tagits fram med stöd av AI (ChatGPT).
- *  Jag utgick från min tidigare grundstruktur och använde AI för att förklara,
- *  justera och utveckla koden så att den följer designen från Figma.
- *
- *  Under arbetet förtydligades hur grid-layout, kortens uppbyggnad
- *  (vit bakgrund, skugga, stjärnor, citattecken, avatarer) och overlay-
- *  bakgrund (#12372A @ 80%) kan implementeras i CSS.
- *
- *  Exempel – när kort “överlappade” varandra:
- *    Orsak: för smal container i kombination med fasta kolumnbredder.
- *    Exempelberäkning: 3×360px + 2×32px gap = 1144px; med container 1200px
- *    minus sidopadding kan layouten bli för trång → överlappning.
- *
- *    Snabb fix vi använde:
- *      .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
- */
+
 
 
 
@@ -481,44 +457,39 @@ padding: 48px 0;
   background-color: #12372A;
 }
 
-/* Rubrik + ingress, centrerat */
 .testimonials-row {
   text-align: center;
 }
 
 .section-subtitle {
-  width: 720px;          /* fast bredd */
+  width: 720px;         
   margin: 0 auto;
   color: rgba(255, 255, 255, 0.85);
   font-size: 28px;
   font-weight: 700;
 }
 
-/* GRID för tre kort – fasta kolumnbredder */
-.testimonials-grid {
+.testimonials-list {                                  
   display: grid;
-  grid-template-columns: repeat(3, 1fr);   
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  justify-content: center;  /* centrera grid i containern */
+  justify-content: center;
   align-items: start;
   margin-top: 28px;
 }
 
-/* Kort */
-.t-card {
+.testimonial {                                       
   position: relative;
   background: #fff;
   color: #1a1a1a;
   border: 1px solid #e8e8e8;
   border-radius: 12px;
   padding: 20px 22px 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  width: 360px; /* matchar kolumnen exakt */
+  width: 360px;
   min-height: 240px;
 }
 
-/* Citattecken nere till höger */
-.t-card .quote-badge {
+.testimonial .quote-icon {                            
   position: absolute;
   right: 16px;
   bottom: 16px;
@@ -527,62 +498,66 @@ padding: 48px 0;
 }
 
 
-/* Stjärnor */
-.stars {
+.star-rating {                                      
   display: inline-flex;
   gap: 4px;
   margin-bottom: 12px;
 }
-.star {
-  font-size: 16px;
-  opacity: 0.25;          /* “tom” stjärna */
-}
-.star.full {
-  opacity: 1;
-  color: #1F6B57;         /* grön accent  */
-}
 
-/* Brödtext i kortet */
-.t-card > p {
+.star-rating .fa-regular { opacity: 0.25; }       
+.star-rating .fa-solid   { opacity: 1; color: #1F6B57; } 
+
+
+.testimonial > p {                                    
   margin: 10px 0 18px;
   color: #4b4b4b;
   line-height: 1.6;
 }
 
-/* Användare (avatar + namn/roll) */
-.t-user {
+.testimonial-author {                                 
   display: grid;
   grid-template-columns: 48px 1fr;
   align-items: center;
   gap: 12px;
 }
-.t-user img {
+
+.testimonial-author .profile {                        
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
   background: #e9e9e9;
 }
-.t-user strong {
+.author .name {                                       
   display: block;
   font-weight: 700;
   margin-bottom: 2px;
   color: #1a1a1a;
 }
-.t-user span {
+.author .role {                                       
   font-size: 14px;
   color: #6a6a6a;
 }
 
 .testimonials h1.section-title,
 .testimonials .section-title {
-  font-size: 25px;   /* välj din storlek */
+  font-size: 25px;   
   line-height: 1.2;
   margin: 0 0 10px 0;
 }
 
 
-/* ===== Why Section (icke-responsiv) ===== */
+
+
+
+
+
+
+
+
+
+
+/* Why Section , delvis framtagen med AI vid komplicationer i placering */
 
 .why-section {
   padding: 80px 0;
@@ -601,10 +576,10 @@ padding: 48px 0;
   display: flex !important;
   flex-direction: column !important;
   gap: 20px;
-  grid-template-columns: unset !important; /* neutralisera äldre regler */
+  grid-template-columns: unset !important; 
+  
 }
 
-/* ikon + text i rad, stabil alignment */
 .feature-item,
 .why-item {
   display: grid !important;
@@ -613,7 +588,6 @@ padding: 48px 0;
   column-gap: 14px;
 }
 
-/* ikonstorlek och baseline */
 .feature-icon,
 .why-icon {
   width: 48px;
@@ -621,7 +595,6 @@ padding: 48px 0;
   display: block;
 }
 
-/* tajta rubriker och brödtext bredvid ikon */
 .feature-text h3,
 .why-text h3 {
   margin: 0 0 6px 0;
@@ -636,7 +609,6 @@ padding: 48px 0;
   opacity: 0.9;
 }
 
-/* valfritt – begränsa vänsterkolumnens läsbredd så det matchar Figma bättre */
 .why-left { max-width: 640px; }
 
 .why-subtitle {
@@ -655,15 +627,26 @@ padding: 48px 0;
   margin-top: 20px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 .pricing-section {
   padding: 80px 0;
-  background-color: #fff /* byt till din färg */
+  background-color: #fff
 }
 .pricing-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);   
   gap: 32px;
-  justify-content: center;  /* centrera grid i containern */
+  justify-content: center;  
   align-items: start;
   margin-top: 28px;
   
@@ -676,8 +659,7 @@ padding: 48px 0;
   border: 1px solid #e8e8e8;
   border-radius: 3%;
   padding: 20px 22px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-  width: 220px; /* matchar kolumnen exakt */
+  width: 220px; 
   min-height: 320px;
   text-align: center;
 }
@@ -709,10 +691,6 @@ padding: 48px 0;
   font-weight: 700;
   margin: 0 0 12px 0;
 }
-
-
-
-
 
 
 .pricing-card-price {
@@ -753,7 +731,15 @@ padding: 48px 0;
   font-weight: 800;
 }
 
-/* CTA – använd container som wrapper */
+
+
+
+
+
+
+
+
+
 .cta-section {
   padding: 80px 0;
   background-color: #12372A;
@@ -761,11 +747,10 @@ padding: 48px 0;
   text-align: center;
 }
 
-/* Viktigt: gör container vertikal just i CTA */
 .cta-section .container {
   max-width: 1100px;
   margin: 0 auto;
-  display: flex;              /* om din globala container redan är flex */
+  display: flex;              
   flex-direction: column;     /* stapla under varandra */
   align-items: center;        /* centrera horisontellt */
   gap: 12px;                  /* avstånd mellan raderna */
@@ -776,7 +761,7 @@ padding: 48px 0;
   font-weight: 800;
   margin: 0 0 12px 0;
   max-width: 40ch;
-  display: block;             /* inte inline-flex */
+  display: block;            
   margin-left: auto;
   margin-right: auto;
 }
@@ -791,7 +776,14 @@ padding: 48px 0;
   margin-right: auto;
 }
 
-/* Sektion & grid */
+
+
+
+
+
+
+
+
 .Latestblogs {
   padding: 64px 0 72px;
 }
@@ -811,6 +803,13 @@ padding: 48px 0;
   border: 1px solid #CFCFCF;
   border-radius: 2px;
   margin-bottom: 16px;
+}
+
+.card-media img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
 }
 .Latestblogs .title {
   grid-column: 1 / -1; /* Satt på rätt plats med hjälpa av AI */
@@ -833,9 +832,7 @@ padding: 48px 0;
   line-height: 1.7;
 }
 
-/* Kort-grid */
 .Latestblogs-cards {
-  
   grid-column: 1 / -1;
   margin-top: 24px;
   display: grid;
@@ -843,18 +840,16 @@ padding: 48px 0;
   gap: 24px;
 }
 
-.Latestblogs-card1, .Latestblogs-card2, .Latestblogs-card3 {
+
+.Latestblogs-card {
   border-radius: 12px;
-  border: solid 1px #e0e0e0;
-  padding: 24px;
-  border: 1px solid #e8e8e8;
-  border-radius: 1%;
+  border: 1px solid #e8e8e8; 
   padding: 20px 20px;
   min-height: 400px;
   background-color: #F1FFEA;
 }
 
-.Latestblogs-card1:hover,.Latestblogs-card2:hover, .Latestblogs-card3:hover {
+.Latestblogs-card:hover {
   background-color: #0f3a2f;
   color: #eaf1ee;
   transform: translateY(-2px);
@@ -888,7 +883,6 @@ padding: 48px 0;
   opacity: .9;
 }
 
-/* Read more-länk – pilrörelse */
 .read-more-link {
   display: inline-flex;
   align-items: center;
@@ -906,9 +900,34 @@ padding: 48px 0;
   transform: translateX(3px);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .newsletter {
   background-color: #FAF8EC;        
-  padding: 20px 0;                 /* luft upp och ner */
+  padding: 20px 0;                 
 }
 
 .newsletter-content {
@@ -947,6 +966,16 @@ padding: 48px 0;
   border-color: #12372A; 
 }
 
+
+
+
+
+
+
+
+
+
+
 .AboutUsHero {
   background: #234b40;   
   color: #ffffff;        
@@ -979,8 +1008,14 @@ padding: 48px 0;
   opacity: 0.9;
 }
 
+
+
+
+
+
+
 .ContactUsHero {
-  background: #12372A;   /* mörkare grön ton för kontrast */
+  background: #12372A;   
   color: #ffffff;
   padding: 80px 0;
 }
@@ -1107,8 +1142,7 @@ padding: 48px 0;
   color: #2F342E;
 }
 
-/* Större kommentarsfält */
-.GetInTech-section #commentsQuestions.form-input {
+.GetInTech-section #comment.form-input {
   height: 120px;
   padding: 10px;
   line-height: 1.4;
@@ -1129,6 +1163,9 @@ padding: 48px 0;
 }
 
 
+.informationbox {
+
+}
 
 
 
@@ -1142,15 +1179,13 @@ padding: 48px 0;
 
 
 
-
-
-/* Centrera tvåkolumnsblocket och ge fasta bredder så högern inte hamnar vid kanten */
+/* FAQ Section, delvis skapad med hjälp av AI */
 .FAQ-section .Accordion-content {
   display: grid;
-  grid-template-columns: 600px 520px; /* vänster / höger — justera 600/520 efter smak */
+  grid-template-columns: 600px 520px; 
   column-gap: 64px;
   align-items: start;
-  justify-content: center;           /* centrerar hela tvåkolumnsblocket i containern */
+  justify-content: center;           
 }
 
 /* Se till att varje kort staplar rubrik + svar under varandra */
@@ -1158,12 +1193,12 @@ padding: 48px 0;
   grid-column: 2 / 3;
   justify-self: stretch;
   width: 100%;
-  display: block;                    /* tvinga block-layouter (ingen grid/flex här) */
+  display: block;                   
 }
 
 /* Svar ska alltid bli en blockrad under knappen när öppet */
 .FAQ-section .Accordion-answer {
-  display: none;                     /* stängt läge */
+  display: none;                     
   width: 100%;
   float: none;                       /* säkerställ att inget flyter */
 }
@@ -1173,7 +1208,6 @@ padding: 48px 0;
   margin-top: 2px;
  }
 
-/* Lås vänsterkolumnens element i kolumn 1 (så inte intro smiter höger) */
 .FAQ-section .Accordion-title,
 .FAQ-section .Accordion-subtitle,
 .FAQ-section .Accordion-intro { grid-column: 1 / 2; }
@@ -1226,8 +1260,8 @@ padding: 48px 0;
 .FAQ-section .acc-icon { transition: transform .2s ease, color .15s ease; color: #12372A; }
 
 .FAQ-section .Accordion-item.is-open .Accordion-question {
-  background: #F3D354;                         /* gul från din design */
-  color: #ffffff;                              /* vit text */
+  background: #F3D354;                         
+  color: #ffffff;                             
 }
 .FAQ-section .Accordion-item.is-open .acc-icon { color: #ffffff; transform: rotate(180deg); }
 
@@ -1244,37 +1278,41 @@ padding: 48px 0;
 .FAQ-section .Accordion-answer p { margin: 0; }
 
 .FAQ-section .Accordion-intro {
-  grid-column: 1;          /* <— förankra i vänster kolumn */
-  margin: 0 0 16px;        /* tajt avstånd nedåt */
+  grid-column: 1;        
+  margin: 0 0 16px;        
   font-size: 16px;
   line-height: 1.6;
-  color: #2F342E;          /* samma textfärg som övrigt bröd */
-  max-width: 520px;        /* valfritt: håll radlängden behaglig */
+  color: #2F342E;          
+  max-width: 520px;        
 }
 
 
 
 
-/* ===== Find Us On – layoutbandet ===== */
+
+
+
+
+
+
+/*  Find Us On – layoutbandet  */
 .FindUs-section {
-  background: #234B40;              /* mörkgrön vägg över hela bredden */
-  padding: 0;                        /* bilden visar flush top/bottom */
+  background: #234B40;          
+  padding: 0;                        
 }
 
-/* Centrera tvåkolumnsblocket i containern */
 .FindUs-section .Container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
 
-/* Två kolumner: vänster bild (flexibel), höger kort (fast) */
 .FindUs-grid {
   display: grid;
-  grid-template-columns: 1fr 760px;  /* justera 760px om du vill smalna/vidga kortet */
+  grid-template-columns: 1fr 760px; 
   align-items: stretch;
   justify-content: center;
-  min-height: 520px;                  /* ger sektionen höjd som i bilden */
+  min-height: 520px;                 
 }
 
 .FindUs-media {
@@ -1286,14 +1324,12 @@ padding: 48px 0;
   height: auto;                      
 }
 
-/* ===== Höger: kortet ===== */
 .FindUs-card {
-  background: #96AD9F;                /* ljusgrön panel */
+  background: #96AD9F;                
   padding: 32px 36px;
   position: relative;
 }
 
-/* Rubriker och text i kortet */
 .FindUs-title {
   margin: 0 0 10px;
   font-size: 44px;
@@ -1309,7 +1345,6 @@ padding: 48px 0;
   max-width: 620px;
 }
 
-/* ===== Info-lista (ikon + text) ===== */
 .FindUs-infoList {
   list-style: none;
   padding: 0;
@@ -1317,13 +1352,12 @@ padding: 48px 0;
 }
 .FindUs-infoItem {
   display: grid;
-  grid-template-columns: 48px auto;   /* ikonbubbla + textblock */
+  grid-template-columns: 48px auto;  
   align-items: center;
   gap: 14px;
   margin: 14px 0;
 }
 
-/* Ikonbubbla (mörkgrön cirkel med SVG inuti) */
 .FindUs-infoIcon {
   display: inline-flex;
   justify-content: center;
@@ -1349,7 +1383,6 @@ padding: 48px 0;
   opacity: 0.9;
 }
 
-/* ===== Social-rad ===== */
 .FindUs-socialRow {
   display: flex;
   align-items: center;
@@ -1362,15 +1395,13 @@ padding: 48px 0;
   color: #12372A;
 }
 
-/* tunn linje som i mockup (dras ut före ikonerna) */
-.FindUs-socialDivider {
+.FindUs-socialDivider { /* css för linjen skapad med AI */
   flex: 1 1 auto;
   height: 2px;
   background: #12372A;
   opacity: 0.6;
 }
 
-/* Ikonknappar – gula cirklar med loggan i */
 .FindUs-socialIcons {
   display: flex;
   align-items: center;
@@ -1381,7 +1412,7 @@ padding: 48px 0;
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #F3D354;                /* gul */
+  background: #F3D354;               
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -1397,3 +1428,36 @@ padding: 48px 0;
   border-color: var(--green);
 }
 
+.form-input {
+  border: 1px solid #F1C30C; 
+  border-radius: 4px;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+/* Fokus = mörkgrön */
+.form-input:focus,
+.form-input:focus-visible {
+  border-color: var(--green);
+}
+
+/* Visa INTE felröd innan användaren börjat skriva */
+.form-input:invalid:placeholder-shown {
+  border-color: #F1C30C;     /* håll default innan input har påbörjats */
+  box-shadow: none;
+}
+
+/* Fel = röd (gäller email/required/pattern) */
+.form-input:invalid:not(:placeholder-shown) {
+  border-color: var(--danger);
+}
+
+
+
+/* Felmeddelande under fältet – visas bara när fältet är ogiltigt */
+.field-error {
+  display: none;
+  color: var(--danger);
+  font-size: 12px;
+  margin-top: 4px;
+}

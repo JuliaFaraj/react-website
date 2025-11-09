@@ -1,13 +1,11 @@
 
 import React from "react";
 
-/* Bilder – exakt paths från src/assets/Images/ */
 import ContactHeroIcon from "../assets/Images/ContactHeroIcon.svg";
-import PhoneIcon       from "../assets/Images/PhoneIcon.svg";   // <— ersätter CallCenter
+import PhoneIcon       from "../assets/Images/PhoneIcon.svg";   
 import EmailIcon       from "../assets/Images/Email.svg";
 import LocationIcon    from "../assets/Images/Location.svg";
 
-/* Sociala ikoner – enligt dina filnamn */
 import Facebook  from "../assets/Images/Facebook.svg";
 import XIcon         from "../assets/Images/iconX.svg";
 import Instagram from "../assets/Images/Instagram.svg";
@@ -21,12 +19,11 @@ const FindUs = () => {
     <section className="FindUs-section">
       <div className="Container">
         <div className="FindUs-grid">
-          {/* Vänster: bild */}
+
           <div className="FindUs-media" aria-hidden="true">
             <img src={ContactHeroIcon} alt="" />         
              </div>
 
-          {/* Höger: kortet med info */}
           <div className="FindUs-card">
             <h2 className="FindUs-title">Find Us On:</h2>
             <p className="FindUs-lead">
@@ -36,7 +33,7 @@ const FindUs = () => {
 
             <ul className="FindUs-infoList">
               <li className="FindUs-infoItem">
-<img className="FindUs-infoIcon" src={PhoneIcon} alt="" aria-hidden="true" />
+                <img className="FindUs-infoIcon" src={PhoneIcon} alt="" aria-hidden="true" />
                 <div className="FindUs-infoText">
                   <strong>Call Center</strong>
                   <span>+46 8 123 122 44</span>
@@ -44,7 +41,7 @@ const FindUs = () => {
               </li>
 
               <li className="FindUs-infoItem">
-<img className="FindUs-infoIcon" src={EmailIcon} alt="" aria-hidden="true" />
+                <img className="FindUs-infoIcon" src={EmailIcon} alt="" aria-hidden="true" />
                 <div className="FindUs-infoText">
                   <strong>Email Address</strong>
                   <span>contact@domain.com</span>
@@ -52,9 +49,9 @@ const FindUs = () => {
               </li>
 
               <li className="FindUs-infoItem">
-<img className="FindUs-infoIcon" src={LocationIcon} alt="" aria-hidden="true" />
+                <img className="FindUs-infoIcon" src={LocationIcon} alt="" aria-hidden="true" />
                 <div className="FindUs-infoText">
-                  <strong>Location</strong>
+                  <strong>Location</strong> 
                   <span>Klarabergsviadukten 90, Stockholm</span>
                 </div>
               </li>
@@ -62,7 +59,7 @@ const FindUs = () => {
 
             <div className="FindUs-socialRow">
               <span className="FindUs-socialLabel">Our Social Media</span>
-              <span className="FindUs-socialDivider" aria-hidden="true"></span>
+              <span className="FindUs-socialDivider" aria-hidden="true"></span> { /* dekorativ linje framtagen med hjälp av AI */ }
               <nav className="FindUs-socialIcons" aria-label="Social media">
                 <a href="#" aria-label="Facebook">
                   <img src={Facebook} alt="" />

@@ -7,9 +7,9 @@ import { useState } from "react";
 // Detta är själva komponenten. En komponent i React är som en “funktion” som returnerar HTML (JSX) att visa på sidan.
 const Accordion = () => {
 
-  // Här skapar vi en lista med frågor och svar.
-  // Vi använder en array med objekt eftersom varje fråga (q) har ett eget svar (a).
-  // Du kan lägga till fler frågor genom att lägga till fler objekt med samma struktur.
+  // Här skapar jag en lista med frågor och svar.
+  // Jag använder en array med objekt eftersom varje fråga (q) har ett eget svar (a).
+  // Jag kan lägga till fler frågor genom att lägga till fler objekt med samma struktur.
   const items = [
     {
       q: "Can I access my stored items anytime?",
