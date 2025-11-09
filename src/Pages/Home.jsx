@@ -1,10 +1,8 @@
-import React from 'react'
 import HeroMain from "../Components/HeroMain.jsx";
 import HeroSub from "../Components/HeroSub.jsx";
 import Brands from '../Components/Brands.jsx';
-import { Link, NavLink } from "react-router-dom";   // avsluta med semikolon
-import OurServices from "../Components/OurServices.jsx"; // ingen klammer
-import Testimonials from '../Components/Testimonials.jsx';
+import OurServices from "../Components/OurServices.jsx"; 
+import ClientTestimonial from '../Components/clientTestimonial.jsx';
 import WhychooseUs from '../Components/WhychooseUs.jsx';
 import Pricing from '../Components/Pricing.jsx';
 import CallToAction from '../Components/CallToAction.jsx';
@@ -19,7 +17,7 @@ const Home = () => {
     <HeroSub />
     <Brands />
     <OurServices />
-    <Testimonials />
+    <ClientTestimonial />
     <WhychooseUs />
     <Pricing />
     <CallToAction />

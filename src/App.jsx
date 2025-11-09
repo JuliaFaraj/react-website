@@ -7,14 +7,12 @@ import Contact from './Pages/Contact.jsx'
 import Topbar from './Components/Topbar.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
-import AboutUsHero from './Components/AboutUsHero.jsx'
-import GetInTech from './Components/GetInTech.jsx'
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="App-content">
-        <Topbar />
+        <Topbar />   {/* Dessa ligger utanför Router så att de finns med på alla sidor*/}
         <Navbar />
 
         <div className="Wrapper">
