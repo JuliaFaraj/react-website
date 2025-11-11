@@ -1163,9 +1163,6 @@ padding: 48px 0;
 }
 
 
-.informationbox {
-
-}
 
 
 
@@ -1179,94 +1176,91 @@ padding: 48px 0;
 
 
 
-/* FAQ Section, delvis skapad med hjälp av AI */
-.FAQ-section .Accordion-content {
-  display: grid;
-  grid-template-columns: 600px 520px; 
-  column-gap: 64px;
-  align-items: start;
-  justify-content: center;           
-}
-
-/* Se till att varje kort staplar rubrik + svar under varandra */
-.FAQ-section .Accordion-item {
-  grid-column: 2 / 3;
-  justify-self: stretch;
-  width: 100%;
-  display: block;                   
-}
-
-/* Svar ska alltid bli en blockrad under knappen när öppet */
-.FAQ-section .Accordion-answer {
-  display: none;                     
-  width: 100%;
-  float: none;                       /* säkerställ att inget flyter */
-}
-.FAQ-section .Accordion-item.is-open .Accordion-answer { display: block; }
-
-.FAQ-section .Accordion-item + .Accordion-item { 
-  margin-top: 2px;
- }
-
-.FAQ-section .Accordion-title,
-.FAQ-section .Accordion-subtitle,
-.FAQ-section .Accordion-intro { grid-column: 1 / 2; }
-
-.Accordion-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #F1C30C;                             
-}
-.Accordion-subtitle {
-  font-size: 32px;
-  font-weight: 800;
-  margin: 0 0 12px;
-  color: #12372A;                             
-}
-
-
-.FAQ-section .Accordion-item {
-  grid-column: 2;
-  width: 100%;
-  margin: 0 0 14px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #ffffff;       
-;                 
-}
+/* ====== Layout för FAQ-sektionen ====== */
 .FAQ-section {
   margin-bottom: 80px;
 }
 
-.FAQ-section .Accordion-question {
+.FAQ-section .Accordion-content {
+  display: grid;
+  grid-template-columns: 600px 520px;
+  column-gap: 64px;
+  align-items: start;
+  justify-content: center;
+}
+
+.FAQ-section .Accordion-title,
+.FAQ-section .Accordion-subtitle,
+.FAQ-section .accordion-intro {
+  grid-column: 1 / 2;
+}
+
+.FAQ-section .accordion-intro {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2F342E;
+  max-width: 520px;
+}
+
+.FAQ-section .accordion-item {
+  grid-column: 2 / 3;
+  width: 100%;
+  margin: 0 0 14px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.accordion-item .item-titlebar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+
   width: 100%;
+  box-sizing: border-box; 
   padding: 12px 16px;
-  border: 0;
-  text-align: left;
+  border-radius: 8px;
+
   cursor: pointer;
+  text-align: left;
   font-size: 16px;
   font-weight: 600;
-  color: #12372A;                              
-  background: #EDEDE9;                         
+
+  color: #12372A;
+  background: #EDEDE9;
 }
-.FAQ-section .Accordion-question:hover { 
-  background: #E6E5E0;
- }
 
-.FAQ-section .acc-icon { transition: transform .2s ease, color .15s ease; color: #12372A; }
-
-.FAQ-section .Accordion-item.is-open .Accordion-question {
-  background: #F3D354;                         
-  color: #ffffff;                             
+.accordion-item .item-titlebar.active {
+  background: var(--primary, #F1C30C);
+  color: #ffffff;
 }
-.FAQ-section .Accordion-item.is-open .acc-icon { color: #ffffff; transform: rotate(180deg); }
 
-.FAQ-section .Accordion-answer {
-  display: none;
+.accordion-item .btn-accordion {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-item .item-icon {
+  position: static;      
+  line-height: 1;
+  transition: transform .2s ease, color .15s ease;
+  color: #12372A;
+}
+
+.accordion-item .item-titlebar.active .item-icon {
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+.accordion-item .item-content {
+  margin: 12px 4px 0;
   padding: 16px 18px;
   border-top: 1px solid #E6E3D6;
   font-size: 14px;
@@ -1274,17 +1268,41 @@ padding: 48px 0;
   color: #2F342E;
   background: #ffffff;
 }
-.FAQ-section .Accordion-item.is-open .Accordion-answer { display: block; }
-.FAQ-section .Accordion-answer p { margin: 0; }
 
-.FAQ-section .Accordion-intro {
-  grid-column: 1;        
-  margin: 0 0 16px;        
-  font-size: 16px;
-  line-height: 1.6;
-  color: #2F342E;          
-  max-width: 520px;        
+.Accordion-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #F1C30C;
 }
+
+.Accordion-subtitle {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #12372A;
+}
+
+
+
+.FAQ-section .Accordion-title, .FAQ-section .Accordion-subtitle, .FAQ-section .Accordion-intro { grid-column: 1 / 2; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

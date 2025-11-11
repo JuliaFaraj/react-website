@@ -44,6 +44,9 @@ const Subscribe = () => {
     // Skriver ut e-posten i konsolen (tillfälligt test)
   };
 
+
+  
+
    return (
     <section className="newsletter theme-light">
       <div className="container">

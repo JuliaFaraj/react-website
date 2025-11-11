@@ -5,6 +5,7 @@ import GetInTech from '../Components/GetInTech.jsx'
 import Accordion from '../Components/Accordion.jsx'
 import FindUsOn from '../Components/FindUsOn.jsx'
 import Subscribe from '../Components/Subscribe.jsx'
+import AccordionItem from '../Components/AccordionItem.jsx'
 
 
 
@@ -14,7 +15,9 @@ const Contact = () => {
         <ContactUsHero />
           <GetInTech />
           <FindUsOn />
-          <Accordion />
+        <Accordion />
+         
+          <AccordionItem />
               <Subscribe />
 
         </>

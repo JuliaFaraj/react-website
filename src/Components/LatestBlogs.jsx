@@ -55,13 +55,13 @@ const LatestBlogs = () => {
               </div>
 
               <div className="date-badge">
-                {new Date(b.created).toLocaleDateString()}            {/* Datum-badge */}
+                {new Date(b.created).toLocaleDateString()}          
               </div>
 
               <h2 className="card-title">{b.title}</h2>               {/* Titel från API */}
-              <p className="Latestblogs-card-subtitle">{b.description}</p> {/* Kort beskrivning */}
+              <p className="Latestblogs-card-subtitle">{b.description}</p> 
 
-              <Link to="/blog" className="read-more-link">Read more</Link> {/* Länk till bloggsida/lista */}
+              <Link to="/blog" className="read-more-link">Read more</Link> 
             </div>
           ))}
         </div>
@@ -70,4 +70,4 @@ const LatestBlogs = () => {
   );
 };
 
-export default LatestBlogs;                              // Exportera komponenten
+export default LatestBlogs;                              
