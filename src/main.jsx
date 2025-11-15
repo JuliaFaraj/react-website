@@ -1,7 +1,6 @@
-// src/main.jsx
 import { createRoot } from 'react-dom/client';
-import './index.css';          // lämna kvar om du använder index.css för styling
-import App from './App.jsx';   // din app-komponent
+import './index.css';          
+import App from './App.jsx';   
 
 const rootEl = document.getElementById('root');
 if (!rootEl) throw new Error('Ingen #root i index.html');

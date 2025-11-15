@@ -1,4 +1,3 @@
-import React from 'react'
 import footerIcon from '../assets/Images/footerIcon.svg';
 
 const Footer = () => {

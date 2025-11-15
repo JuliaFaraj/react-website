@@ -13,7 +13,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App-content">
-        <Topbar />   {/* Dessa ligger utanför Router så att de finns med på alla sidor*/}
+        <Topbar />   
         <Navbar />
 
         <div className="Wrapper">

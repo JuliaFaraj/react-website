@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Testimonials from './Testimonials'
+import BgImg from '../assets/Images/BgImg.svg';
 
 const ClientTestimonial = () => {
     const [testimonials, setTestimonials]= useState ([])
@@ -19,7 +20,7 @@ const ClientTestimonial = () => {
     }, [] )
 
   return (
-  <div className="testimonials">
+  <div className="testimonials" style={{ backgroundImage: `url(${BgImg})` }}>
       <div className="container">
         <div className="testimonials-row">
           <h1 className="section-title">Testimonials</h1>

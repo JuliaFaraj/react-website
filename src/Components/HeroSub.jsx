@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom';
 import PhoneIcon from '../assets/Images/PhoneIcon.svg';
 
@@ -8,9 +7,8 @@ const HeroSub = () => {
     <section className="about-hero theme-light">
       <div className="container">
         <div className="about-media">
-          {/* <img src={imageUrlFromAPI} alt="..." /> */}
 
-          <div className="about-stats"> {/* About-stars stycket är genererat med AI*/}
+          <div className="about-stats"> {/* About-stars stycket är genererat med hjälp av AI*/}
             <div className="stat"><strong>12+</strong><span>Years of Experience</span></div>
             <div className="stat"><strong>150K+</strong><span>Satisfied Clients</span></div>
             <div className="stat"><strong>35+</strong><span>Warehouse</span></div>
@@ -33,7 +31,7 @@ const HeroSub = () => {
             </div>
           </div>
 
-          <div className="about-actions">   {/* <— LIGGER UTANFÖR subCards */}
+          <div className="about-actions">   
             <NavLink to="/services" className="btn--primary">Discover More</NavLink>
 
             <div className="about-contact">

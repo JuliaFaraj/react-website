@@ -1,6 +1,4 @@
 
-import React from "react";
-
 import ContactHeroIcon from "../assets/Images/ContactHeroIcon.svg";
 import PhoneIcon       from "../assets/Images/PhoneIcon.svg";   
 import EmailIcon       from "../assets/Images/Email.svg";

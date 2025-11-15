@@ -1,4 +1,3 @@
-import React from 'react'
 
 const OurServices = () => {
   return (
@@ -6,7 +5,6 @@ const OurServices = () => {
         <div className="container"> 
       <h2 className="hero-sub-title">Our Services</h2>
 
-      {/* Översta raden: stor rubrik + ingress i två spalter */}
       <div className="our-services-header">
         <h2 className="hero-sub-text">Specialized Storage for Every Special Item</h2>
         <p className="hero-sub-ingress">
@@ -16,7 +14,6 @@ const OurServices = () => {
         </p>
       </div>
 
-      {/* Nedre raden: vänsterkolumn (2 kort) – media – högerkolumn (2 kort) */}
       <div className="services-layout">
         <div className="services-col">
           <div className="service-card">
@@ -30,7 +27,7 @@ const OurServices = () => {
         </div>
 
         <div className="services-media" aria-hidden="true">
-            {/* <img src={...} alt="" /> */}</div>
+           </div>
 
         <div className="services-col">
           <div className="service-card">

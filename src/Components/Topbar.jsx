@@ -1,5 +1,3 @@
-// src/Components/Topbar.jsx
-// Alla imports överst (OBS: "Images" med stort I – matchar din mapp)
 import fb from '../assets/Images/Facebook.svg';
 import tw from '../assets/Images/IconX.svg';
 import ig from '../assets/Images/Instagram.svg';

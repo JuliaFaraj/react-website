@@ -1,3 +1,5 @@
+
+
 Box-sizing reset
 *, *::before, *::after {
   box-sizing: border-box;
@@ -156,10 +158,10 @@ h1 {
 
 
 
-/* ===== HERO LAYOUT ===== */
 .hero { 
   padding: 60px 0; 
   background-color: #12372A; 
+  opacity: 80%;
 }
 
 .hero .container { 
@@ -331,14 +333,12 @@ h1 {
   gap: 12px;
 }
 
-/* Ikonens storlek – annars blir den ful/ojämn */
 .contact-icon {
   width: 44px;
   height: 44px;
   display: block;
 }
 
-/* Gör så knappen inte bryter rad mitt i ordet */
 .btn--primary { 
   white-space: nowrap; 
 }
@@ -403,7 +403,7 @@ padding: 48px 0;
   color: #12372A;
 }
 
-/* Nedre rad: vänster (2 kort) – media – höger (2 kort), genererad med AI */
+/* Nedre rad: vänster (2 kort) – media – höger (2 kort), genererad med hjälp av AI */
 .services-layout {
   display: grid;
   grid-template-columns: 1fr minmax(300px, 560px) 1fr;  
@@ -426,7 +426,7 @@ padding: 48px 0;
 
 .service-card:hover {
   border-color: var(--primary); 
-}         /* gul kant */
+}         
 
 .service-card h5 {
   margin: 0 0 8px 0;
@@ -448,6 +448,48 @@ padding: 48px 0;
 
 
 
+/* Testimonials delen har jag skapad med hjälp av AI. Jag lyckades exempelvis inte lägga in bakgrundsbilden på ett bra sätt utan fick till slut ta hjälp av AI för att lyckas få till den på ett bra sätt. */
+
+.testimonials {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+  color: #fff;                  
+  background: transparent;     
+}
+
+.testimonials .bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.testimonials .bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonials::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(18,55,42,.58);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.testimonials > *:not(.bg) {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials .card {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
 
 
 
@@ -455,7 +497,15 @@ padding: 48px 0;
   padding: 72px 0;
   color: #fff;
   background-color: #12372A;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;         
+  overflow: hidden; 
 }
+
+
 
 .testimonials-row {
   text-align: center;
@@ -557,11 +607,11 @@ padding: 48px 0;
 
 
 
-/* Why Section , delvis framtagen med AI vid komplicationer i placering */
+/* Why Section , delvis framtagen med AI för placering */
 
 .why-section {
   padding: 80px 0;
-  background-color: #FAF8EC; /* byt till din färg */
+  background-color: #FAF8EC; 
 }
 
 .why-wrapper {
@@ -572,7 +622,6 @@ padding: 48px 0;
 }
 
 .why-grid {
-  /* tvinga EN vertikal lista, inte 2 kolumner */
   display: flex !important;
   flex-direction: column !important;
   gap: 20px;
@@ -742,8 +791,9 @@ padding: 48px 0;
 
 .cta-section {
   padding: 80px 0;
-  background-color: #12372A;
-  color: #fff;
+  background-color: #12372A ;
+  opacity: 80%;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -751,9 +801,9 @@ padding: 48px 0;
   max-width: 1100px;
   margin: 0 auto;
   display: flex;              
-  flex-direction: column;     /* stapla under varandra */
-  align-items: center;        /* centrera horisontellt */
-  gap: 12px;                  /* avstånd mellan raderna */
+  flex-direction: column;     
+  align-items: center;        
+  gap: 12px;                 
 }
 
 .cta-title {
@@ -798,7 +848,7 @@ padding: 48px 0;
 
 .card-media {
   width: 100%;
-  height: 180px;            /* gör den längre/kortare vid behov */
+  height: 180px;           
   background: #D9D9D9;
   border: 1px solid #CFCFCF;
   border-radius: 2px;
@@ -812,7 +862,7 @@ padding: 48px 0;
   display: block; 
 }
 .Latestblogs .title {
-  grid-column: 1 / -1; /* Satt på rätt plats med hjälpa av AI */
+  grid-column: 1 / -1; 
   margin: 0 0 12px;
   font-size: 18px;
   font-weight: 700;
@@ -826,7 +876,7 @@ padding: 48px 0;
   letter-spacing: -0.02em;
 }
 .Latestblogs-lead {
-  grid-column: 7 / -1; /* Satt på rätt plats med hjälpa av AI */
+  grid-column: 7 / -1; 
   margin: 8px 0 0;
   font-size: 16px;
   line-height: 1.7;
@@ -977,7 +1027,8 @@ padding: 48px 0;
 
 
 .AboutUsHero {
-  background: #234b40;   
+  background: #12372A;  
+  opacity: 80%; 
   color: #ffffff;        
   padding: 80px 0;       
 }
@@ -1016,6 +1067,7 @@ padding: 48px 0;
 
 .ContactUsHero {
   background: #12372A;   
+  opacity: 80%;
   color: #ffffff;
   padding: 80px 0;
 }
@@ -1067,14 +1119,13 @@ padding: 48px 0;
   margin-top: 40px;
 }
 
-/* Håller vänster och höger inom containern */
 .GetInTech-section .GetInTech-left { 
   flex: 0 1 640px;
   min-width: 0;
   margin: 0;
 }
 .GetInTech-section .GetInTech-right { 
-  flex: 0 0 420px;            /* fast panelbredd på höger */
+  flex: 0 0 420px;            
 }
 
 .GetInTech-section .GetInTech-left > * { margin: 0; }
@@ -1170,13 +1221,8 @@ padding: 48px 0;
 
 
 
+/* AI hjälpte mig med css då jag hade problem med en kanpp som låg utanför containern av någon anledning som jag ej kunde hitta i jsx filerna*/
 
-
-
-
-
-
-/* ====== Layout för FAQ-sektionen ====== */
 .FAQ-section {
   margin-bottom: 80px;
 }
@@ -1191,11 +1237,11 @@ padding: 48px 0;
 
 .FAQ-section .Accordion-title,
 .FAQ-section .Accordion-subtitle,
-.FAQ-section .accordion-intro {
+.FAQ-section .Accordion-intro {
   grid-column: 1 / 2;
 }
 
-.FAQ-section .accordion-intro {
+.FAQ-section .Accordion-intro {
   margin: 0 0 16px;
   font-size: 16px;
   line-height: 1.6;
@@ -1203,7 +1249,14 @@ padding: 48px 0;
   max-width: 520px;
 }
 
+/* Göm ALLA accordion-item som standard */
+.accordion-item {
+  display: none;
+}
+
+/* Visa bara de som ligger inne i FAQ-section  */
 .FAQ-section .accordion-item {
+  display: block;
   grid-column: 2 / 3;
   width: 100%;
   margin: 0 0 14px;
@@ -1213,14 +1266,15 @@ padding: 48px 0;
   overflow: visible;
 }
 
-.accordion-item .item-titlebar {
+/* Styling för innehållet – skopat till FAQ */
+.FAQ-section .accordion-item .item-titlebar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   padding: 12px 16px;
   border-radius: 8px;
 
@@ -1233,12 +1287,12 @@ padding: 48px 0;
   background: #EDEDE9;
 }
 
-.accordion-item .item-titlebar.active {
+.FAQ-section .accordion-item .item-titlebar.active {
   background: var(--primary, #F1C30C);
   color: #ffffff;
 }
 
-.accordion-item .btn-accordion {
+.FAQ-section .accordion-item .btn-accordion {
   flex: 0 0 auto;
   width: 32px;
   height: 32px;
@@ -1247,19 +1301,19 @@ padding: 48px 0;
   justify-content: center;
 }
 
-.accordion-item .item-icon {
-  position: static;      
+.FAQ-section .accordion-item .item-icon {
+  position: static;
   line-height: 1;
   transition: transform .2s ease, color .15s ease;
   color: #12372A;
 }
 
-.accordion-item .item-titlebar.active .item-icon {
+.FAQ-section .accordion-item .item-titlebar.active .item-icon {
   transform: rotate(180deg);
   color: #ffffff;
 }
 
-.accordion-item .item-content {
+.FAQ-section .accordion-item .item-content {
   margin: 12px 4px 0;
   padding: 16px 18px;
   border-top: 1px solid #E6E3D6;
@@ -1269,13 +1323,13 @@ padding: 48px 0;
   background: #ffffff;
 }
 
-.Accordion-title {
+.FAQ-section .Accordion-title {
   font-size: 18px;
   font-weight: 600;
   color: #F1C30C;
 }
 
-.Accordion-subtitle {
+.FAQ-section .Accordion-subtitle {
   font-size: 32px;
   font-weight: 800;
   margin: 0 0 12px;
@@ -1284,7 +1338,6 @@ padding: 48px 0;
 
 
 
-.FAQ-section .Accordion-title, .FAQ-section .Accordion-subtitle, .FAQ-section .Accordion-intro { grid-column: 1 / 2; }
 
 
 
@@ -1308,12 +1361,6 @@ padding: 48px 0;
 
 
 
-
-
-
-
-
-/*  Find Us On – layoutbandet  */
 .FindUs-section {
   background: #234B40;          
   padding: 0;                        
@@ -1453,26 +1500,22 @@ padding: 48px 0;
   transition: border-color .15s ease, box-shadow .15s ease;
 }
 
-/* Fokus = mörkgrön */
 .form-input:focus,
 .form-input:focus-visible {
   border-color: var(--green);
 }
 
-/* Visa INTE felröd innan användaren börjat skriva */
 .form-input:invalid:placeholder-shown {
-  border-color: #F1C30C;     /* håll default innan input har påbörjats */
+  border-color: #F1C30C;     
   box-shadow: none;
 }
 
-/* Fel = röd (gäller email/required/pattern) */
 .form-input:invalid:not(:placeholder-shown) {
   border-color: var(--danger);
 }
 
 
 
-/* Felmeddelande under fältet – visas bara när fältet är ogiltigt */
 .field-error {
   display: none;
   color: var(--danger);

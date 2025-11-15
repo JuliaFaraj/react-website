@@ -1,56 +1,55 @@
 
-
-
-
-
-
-
 import { Link } from 'react-router-dom';            
 import { useState, useEffect } from 'react';        
 
-const LatestBlogs = () => {
-  const [blogs, setBlogs] = useState([]);           // Lista med bloggar från API
-  const [loading, setLoading] = useState(true);     // Visar "Laddar…" tills hämtningen är klar
-  const [error, setError] = useState('');           // Text för felmeddelande
+// Försökte skapa en grundstruktur utifrån vanlig html och tidigare hämtning men fungerade inte korrekt så fick be AI  om hjälp för hämtningen.
+// LatestBlog sektionen hämtar bloggar från ett API när sidan laddas.
+// Den sparar resultatet i state, hanterar loading och error, sorterar bloggarna efter datum, plockar ut de tre senaste och renderar dem som kort.
+// Varje kort visar bild, datum, titel, beskrivning och en länk som går till /blog via React Router.
 
-  const fetchData = async () => {                   // Hämtar data en gång vid mount
+const LatestBlogs = () => {
+  const [blogs, setBlogs] = useState([]);          
+  const [loading, setLoading] = useState(true);    
+  const [error, setError] = useState('');           
+
+  const fetchData = async () => {                   
     try {
-      const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/blogs'); // GET
+      const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/blogs'); 
       if (!res.ok) throw new Error(`Request failed: ${res.status}`); 
-      const data = await res.json();                // Tolka svaret som JSON
-      setBlogs(data);                               // Spara i state → triggar render
+      const data = await res.json();                
+      setBlogs(data);                               
     } catch (err) {
-      setError(err.message || 'Unknown error');     // Sätt feltext om något brakar
+      setError(err.message || 'Unknown error');     
     } finally {
-      setLoading(false);                            // Oavsett utfall: sluta ladda
+      setLoading(false);                            
     }
   };
 
-  useEffect(() => { fetchData(); }, []);            // Kör fetchData endast första rendern
+  useEffect(() => { fetchData(); }, []);            
 
-  if (loading) return <p>Laddar…</p>;               // Enkel loader (kan bytas till skeleton)
-  if (error)   return <p className="error-message">{error}</p>; // Visa fel och avbryt
+  if (loading) return <p>Laddar…</p>;               
+  if (error)   return <p className="error-message">{error}</p>; 
 
   
-  const latest = [...blogs]                          // Kopiera för att inte mutera state
-    .sort((a, b) => new Date(b.created) - new Date(a.created)) // Datumjämförelse
-    .slice(0, 3);                                    // Endast tre kort
+  const latest = [...blogs]                          
+    .sort((a, b) => new Date(b.created) - new Date(a.created)) 
+    .slice(0, 3);                                    
 
   return (
-    <section className="Latestblogs theme-light">    {/* Sektionens wrapper + tema */}
-      <div className="container">                    {/* Grid-container (styr layout i CSS) */}
-        <h1 className="title">Latest Blog and News</h1>                                   {/* Överrubrik */}
-        <h2 className="Latestblog-subtitle">Check Out Our Latest Blog and News Update</h2> {/* Huvudrubrik */}
-        <p className="Latestblogs-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> {/* Intro */}
+    <section className="Latestblogs theme-light">    
+      <div className="container">                    
+        <h1 className="title">Latest Blog and News</h1>                                   
+        <h2 className="Latestblog-subtitle">Check Out Our Latest Blog and News Update</h2> 
+        <p className="Latestblogs-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
 
-        <div className="Latestblogs-cards">          {/* Grid för tre kort */}
-          {latest.map((b) => (                      // Loopa igenom senaste tre
-            <div key={b.id} className="Latestblogs-card theme-light"> {/* Ett blog-kort */}
-              <div className="card-media" aria-hidden="true">         {/* Bildyta (dekorativ) */}
+        <div className="Latestblogs-cards">          
+          {latest.map((b) => (                      
+            <div key={b.id} className="Latestblogs-card theme-light"> 
+              <div className="card-media" aria-hidden="true">         
                 <img
-                  src={b.imageUrl || b.imageurl}    // Säker fallback om API varierar på key
-                  alt={b.title}                      // Alt för tillgänglighet
-                  loading="lazy"                     // Ladda bilder först när de syns
+                  src={b.imageUrl || b.imageurl}    
+                  alt={b.title}                      
+                  loading="lazy"                    
                 />
               </div>
 
@@ -58,7 +57,7 @@ const LatestBlogs = () => {
                 {new Date(b.created).toLocaleDateString()}          
               </div>
 
-              <h2 className="card-title">{b.title}</h2>               {/* Titel från API */}
+              <h2 className="card-title">{b.title}</h2>               
               <p className="Latestblogs-card-subtitle">{b.description}</p> 
 
               <Link to="/blog" className="read-more-link">Read more</Link> 

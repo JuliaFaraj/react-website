@@ -1,4 +1,3 @@
-// src/Components/Brands.jsx
 import logo1 from "../assets/Images/Logoipsum 1.svg";
 import logo2 from "../assets/Images/Logoipsum 2.svg";
 import logo3 from "../assets/Images/Logoipsum 3.svg";

@@ -1,46 +1,97 @@
-import { useState } from 'react'; // Validering av formulär med hjälp av state och enkla kontroller. Inspirerad av Hans video om formulärhantering i React.
-// Efter att ha följt Hans video blev min kod ganska rörig då min validering låg efter POST till API. Jag skickade min kod till AI och bad den lägga allt i rätt ordning för bättre struktur.
+import { useState } from 'react';
+// Validreing baserad på lärares video men finslipad med hjälp av AI.
 
 const GetInTech = () => {
-
-  const [formData, setFormData] = useState({ // Sparar det som skrivs in i varje fält
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phonenumber: '',
     subject: '',
-    comment: ''
+    comment: '',
   });
+  const [errors, setErrors] = useState({});
 
-  const [errors, setErrors] = useState({}); // Sparar felmeddelanden (t.ex. om fältet är tomt)
+  const nameRegex = /^[\p{L}\s-]{2,}$/u;
+  const emailRegex = /^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/u;
 
-  const handleChange = (e) => { // Körs varje gång användaren skriver något i ett fält
-    const { name, value } = e.target; // Hämtar fältnamn och värde
-    setFormData((f) => ({ ...f, [name]: value })); // Uppdaterar det specifika fältets värde
+ 
+  const validateField = (name, value) => {
+    const trimmed = String(value).trim();
+    let error = '';
 
-    // Validering – enkel kontroll: tomt fält?
-    if (value.trim() === '') { setErrors(prev => ({ ...prev, [name]: 'Detta fält måste fyllas i.' })); } // Spara fel
-    else { setErrors(prev => ({ ...prev, [name]: '' })); } // Ta bort fel om det finns text
+    
+    if (['name', 'email', 'subject', 'comment'].includes(name) && !trimmed) {
+      error = 'Detta fält måste fyllas i.';
+    } else if (name === 'name' && trimmed && !nameRegex.test(trimmed)) {
+      error = 'Must be at least 2 characters long, no numbers.';
+    } else if (name === 'email' && trimmed && !emailRegex.test(trimmed)) {
+      error = 'Must be a valid email (eg. username@domain.com).';
+    }
+
+    setErrors(prevErrors => ({
+      ...prevErrors,
+      [name]: error,
+    }));
+
+    return error === '';
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    ['name', 'email', 'subject', 'comment'].forEach((field) => {
+      const value = String(formData[field]).trim();
+      if (!value) {
+        newErrors[field] = 'Detta fält måste fyllas i.';
+      }
+    });
+
+    if (formData.name.trim() && !nameRegex.test(formData.name.trim())) {
+      newErrors.name = 'Must be at least 2 characters long, no numbers.';
+    }
+
+    if (formData.email.trim() && !emailRegex.test(formData.email.trim())) {
+      newErrors.email = 'Must be a valid email (eg. username@domain.com).';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    validateField(name, value);
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Körs när man klickar på "Skicka" – stoppar sid-reload
+    e.preventDefault();
+
+    if (!validateForm()) {
+      console.log('form invalid');
+      return;
+    }
+
+    console.log('form valid');
 
     const res = await fetch('https://win25-jsf-assignment.azurewebsites.net/api/contact', {
-      method: 'post', // POST
-      headers: { 'Content-Type': 'application/json' }, // JSON-header
-      body: JSON.stringify(formData) // Skickar formData
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     });
 
-    if (res.ok) { const data = await res.text(); console.log(data); } // Lyckat svar (text)
-    else { const data = await res.json(); console.log(data); } // Misslyckat svar (json)
-
-    const newErrors = {}; // Skapar ett nytt objekt för fel
-    Object.keys(formData).forEach((field) => { // Går igenom alla fält
-      if (String(formData[field]).trim() === '') { newErrors[field] = 'Detta fält måste fyllas i.'; } // Lägg till fel om tomt
-    });
-
-    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; } // Visa fel och avbryt
-    setErrors({}); // Rensa fel om allt korrekt
+    if (res.ok) {
+      const data = await res.text();
+      console.log(data);
+    } else {
+      const data = await res.json();
+      console.log(data);
+    }
   };
 
   return (
@@ -60,7 +111,7 @@ const GetInTech = () => {
           <div className="GetInTech-right">
             <div className="GetInTech-form">
               <form className="regForm" noValidate onSubmit={handleSubmit}>
-                
+
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">Your Name</label>
                   <input
@@ -73,7 +124,9 @@ const GetInTech = () => {
                     value={formData.name}
                     onChange={handleChange}
                   />
-                  <span className="error-message">{errors.name && errors.name}</span> {/* Felmeddelande för name */}
+                  <span className="error-message">
+                    {errors.name && errors.name}
+                  </span>
                 </div>
 
                 <div className="form-group">
@@ -88,7 +141,9 @@ const GetInTech = () => {
                     value={formData.email}
                     onChange={handleChange}
                   />
-                  <span className="error-message">{errors.name && errors.name}</span> {/* Visar fel (nu samma nyckel som i din kod) */}
+                  <span className="error-message">
+                    {errors.email && errors.email}
+                  </span>
                 </div>
 
                 <div className="form-group">
@@ -102,6 +157,9 @@ const GetInTech = () => {
                     value={formData.phonenumber}
                     onChange={handleChange}
                   />
+                  <span className="error-message">
+                    {errors.phonenumber && errors.phonenumber}
+                  </span>
                 </div>
 
                 <div className="form-group">
@@ -116,7 +174,9 @@ const GetInTech = () => {
                     value={formData.subject}
                     onChange={handleChange}
                   />
-                  <span className="error-message">{errors.subject && errors.subject}</span> {/* Fel för subject */}
+                  <span className="error-message">
+                    {errors.subject && errors.subject}
+                  </span>
                 </div>
 
                 <div className="form-group">
@@ -130,7 +190,9 @@ const GetInTech = () => {
                     value={formData.comment}
                     onChange={handleChange}
                   />
-                  <span className="error-message">{errors.commentsQuestions && errors.commentsQuestions}</span> {/* Som i din kod */}
+                  <span className="error-message">
+                    {errors.comment && errors.comment}
+                  </span>
                 </div>
 
                 <button type="submit" className="btn--primary">Submit</button>

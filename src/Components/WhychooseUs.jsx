@@ -3,11 +3,12 @@ import iconDataSec     from "../assets/Images/IconSafety.svg";
 import iconStatistics  from "../assets/Images/IconClean.svg";
 import iconSupport     from "../assets/Images/IconClock.svg";
 
-// // Jag återanvände en sektion från mitt föra projekt men eftersom det var i HTML/CSS behövde jag anpassa det till React.
-// Jag had eingen aning om hur detta skulle göras då sektionen skapades inna  videos kom ut på det från skolan så jag fick ta hjälp av AI göra om sektionen så att den passade för React.
-// Jag bad om förklaringar till varför AI tykte att jag skulle göra det på detta sättet och jag har lagt kommentarer dör att själva komma ihåg och förstå.
+// Jag återanvände en sektion från mitt föra projekt men eftersom det var i HTML/CSS behövde jag anpassa det till React.
+// Jag hade ingen aning om hur detta skulle göras då sektionen skapades innan videos kom ut på omvanligen till react från skolan så jag fick ta hjälp av AI göra om sektionen så att den passade för React.
+// Jag har en array whyItems med fyra objekt där jag definierar ikon, titel och text.
+// I JSX mappar jag över den arrayen och bygger ett kort för varje item med icon + rubrik + text.
+// Vänstersidan är själva listan, högersidan är ett infokort med en lite längre text.
 
-// Innehåll/data ligger i en separat lista. Det gör komponenten renare, lättare att testa och enklare att byta ut mot API senare.
 const whyItems = [
   { id: 1, icon: iconPayments,   title: "Easy Payments",   text: "Lorem ipsum dolor sit amet, consectetur adipiscing..." },
   { id: 2, icon: iconDataSec,    title: "Data Security",   text: "Lorem ipsum dolor sit amet, consectetur adipiscing..." },
@@ -18,8 +19,6 @@ const whyItems = [
 
 
 const WhyChooseUs = () => {
-  // <section> = semantisk “sektion” för en sammanhängande del av sidan.
-  // Varför? Bättre struktur, SEO och tillgänglighet jämfört med en div.
   return (
     <section className="why-section">
       <div className="container">
@@ -31,13 +30,10 @@ const WhyChooseUs = () => {
 
             <div className="why-grid why-grid--about">
 
-             {/*  Vi loopar igenom listan whyItems för att slippa skriva samma kod flera gånger. Det gör att all info (titel, text, ikon) bara finns på ett ställe, 
-             så om vi ändrar något där uppdateras det automatiskt här. Senare kan vi enkelt byta ut listan mot data från ett API utan att ändra layouten. */}
+             
 
               {whyItems.map((f) => (
-                //  key = stabil identitet per rad. Hjälper React diff:a snabbare och korrekt.
                 <div className="why-item" key={f.id}>
-                  {/*  Ikonen är dekorativ → alt="" + aria-hidden="true" så skärmläsare inte läser upp onödig info. */}
                   <img src={f.icon} alt="" className="why-icon" aria-hidden="true" />
 
                   <div className="why-text">

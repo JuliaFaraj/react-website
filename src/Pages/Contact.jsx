@@ -1,5 +1,4 @@
 
-import React from 'react'
 import ContactUsHero from '../Components/ContactUs.jsx'
 import GetInTech from '../Components/GetInTech.jsx'
 import Accordion from '../Components/Accordion.jsx'
@@ -11,17 +10,16 @@ import AccordionItem from '../Components/AccordionItem.jsx'
 
 const Contact = () => {
   return (
-    <>
-        <ContactUsHero />
-          <GetInTech />
-          <FindUsOn />
-        <Accordion />
-         
-          <AccordionItem />
-              <Subscribe />
+  <>
+  <ContactUsHero />
+  <GetInTech />
+  <FindUsOn />
+  <Accordion />
+  <AccordionItem />
+  <Subscribe />
 
-        </>
-  )
-}
+ </>
+
+  )}
 
 export default Contact

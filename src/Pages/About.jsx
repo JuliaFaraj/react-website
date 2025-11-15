@@ -1,4 +1,3 @@
-import React from 'react'
 import AboutUsHero from '../Components/AboutUsHero'
 import HeroSub from '../Components/HeroSub'
 import Brands from '../Components/Brands.jsx';
@@ -9,25 +8,15 @@ import Subscribe from '../Components/Subscribe.jsx';
 
 
 
-
-
-
-
 const About = () => {
   return (
     <>
     <AboutUsHero />
     <HeroSub />
-        <Brands />
-            <ClientTestimonial />
-                <WhychooseUs />
-                    <Subscribe />
-
-                
-
-
-
-
+    <Brands />
+    <ClientTestimonial />
+    <WhychooseUs />
+    <Subscribe />
     </>
   )
 }
