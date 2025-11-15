@@ -1,16 +1,47 @@
-# React + Vite
+React-projekt – StorAid
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Detta är ett skolprojekt där jag har byggt en webbplats i React utifrån en Figma-design. Fokus har legat på att arbeta komponentbaserat, hämta data från API:er och skapa en ren, tydlig och organiserad projektstruktur. Jag har även använt AI som bollplank när jag fastnade eller behövde hjälp att förstå logik, men all kod är skriven, anpassad och implementerad av mig.
 
-Currently, two official plugins are available:
+Uppbyggnad
+React & Struktur
+- Projektet är uppdelat i flera fristående komponenter under src/Components/.
+- Navigering hanteras med React Router.
+- Varje sektion i designen motsvarar en egen komponent (t.ex. LatestBlogs, FAQ, WhyChooseUs, Contact Form).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+API-hämtningar
+Bloggar
+- Hämtar alla bloggar, sorterar dem efter datum och visar de tre senaste.
+FAQ
+- Hämtar FAQ-poster från API och visar dem i en egenbyggd accordion med öppna/stäng-funktion.
 
-## React Compiler
+Kontaktformulär
+Formuläret hanterar:
+- state med useState
+- validering med reguljära uttryck
+- validering vid submit
+- POST-request till API:t när allt är korrekt ifyllt
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+CSS & Layout
+- All styling är skriven i vanlig CSS.
+- Jag använder både flexbox och grid beroende på sektion.
 
-## Expanding the ESLint configuration
+Struktur
+- Komponenter: src/Components/
+- Sidor: src/Pages/
+- Bilder & ikoner: src/assets/
+- Global CSS: index.css
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Reflektion
+
+Jag har arbetat självständigt med detta projekt och använt AI (ChatGPT) som ett stöd för att förstå specifika problem, felsöka snabbare och få tips på hur jag kunde strukturera min kod bättre. Det var viktigt för mig att förstå vad jag gjorde och varför, så all logik och alla beslut i projektet är mina egna.
+
+Under projektets gång har jag:
+- byggt komponenter från grunden
+- satt upp routing mellan alla sidor
+- hämtat och presenterat data från API
+- skapat ett fullständigt kontaktformulär
+- löst layoutproblem och buggar (t.ex. extra knappar, grid-problem och valideringsfel)
+
+
+Det här projektet har gett mig en tydligare förståelse för hur man bygger en modern React-applikation med fokus på struktur, komponenter och API-hantering. I framtida arbetetn kommer jag se till att förbättra och bygga vidare på uppräckter jag fick under arbetets gång, exempelvis kommer jag framöver inte ha en global css fil för att enklare kuna hitta alla olika css delar genom egna filer. 
